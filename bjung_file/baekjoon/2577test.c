@@ -5,7 +5,6 @@ int main() {
     int num[10] = { 0 };
     scanf("%d %d %d", &a, &b, &c);
     int result = a * b * c;
-    
     while (result > 0) {
         num[result % 10]++;
         result /= 10;
