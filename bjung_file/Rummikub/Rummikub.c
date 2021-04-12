@@ -1,101 +1,123 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 struct card
 {
-    int number[104];
-    int color[4]; //blue, red, orange, black
+    int number; // 1 ~ 13
+    int color; // 1 ~ 4
+    int joker; // 2
 };
 
-int group(int card1, int card2, int card3, int card4);
-int run(int card1, int card2, int card3, int card4);
+void card_create(struct card c[104]);
+void card_check(struct card c[104]);
+void swap(struct card *a, struct card *b);
+void shuffle(struct card *c);
+void first_card(struct card c[104], struct card f[30]);
 
-int main(void)
+int main()
 {
-    struct card c;
+    struct card c[104];
+    struct card user1[30];
 
-    int n = 0;
-    for (int i = 0; i < 4; i++)
+    char select;
+
+    card_create(c);
+    shuffle(c);
+    card_check(c);
+    first_card(c, user1);
+
+    printf("_____________________________________________________________\n");
+    for (int i = 0; i < 14; i++)
     {
-        c.color[i] = i;
-        for (int j = 0; c.color[i] = i; j++)
+        if(user1[i].color == 1)
         {
-            for (int k = 1; k <= 13; k++) 
+            printf("\033[1;31m%d \033[0m", user1[i].number);
+        }
+        if(user1[i].color == 2)
+        {
+            printf("\033[1;34m%d \033[0m", user1[i].number);
+        }
+        if(user1[i].color == 3)
+        {
+            printf("\033[1;33m%d \033[0m", user1[i].number);
+        }
+        if(user1[i].color == 4)
+        {
+            printf("\033[1;30m%d \033[0m", user1[i].number);
+        }
+    }
+    printf("\n----- select ----- \n d : Draw a card\n");
+    scanf("%s", &select);
+    if (select == 'd')
+    {
+         printf("----- Draw -----");
+         user1[i+1]. = c[i+1]
+         
+    }
+    
+}
+
+void card_create(struct card c[104])
+{
+    int n = 0;
+    for (int i = 1; i <= 2; i++)
+    {
+        for (int j = 1; j <= 4; j++)
+        {
+            for (int k = 1; k <= 13; k++)
             {
-                c.number[n] = k;
-                c.color[n] = i;
+                c[n].color = j;
+                c[n].number = k;
                 n++;
             }
-        }    
-    }
-
-    int red_card[14] = {1, 2, 3 ,4 , 5, 6, 7, 8, 9, 10,
-    11, 12, 13};
-    int orange_card[14] = {1, 2, 3 ,4 , 5, 6, 7, 8, 9, 10,
-    11, 12, 13};
-    int black_card[14] = {1, 2, 3 ,4 , 5, 6, 7, 8, 9, 10,
-    11, 12, 13};
-
-    int size = 14;
-    int *user_card = malloc(sizeof(int) * size);
-    for(int i = 0; i < size; i++)
-    {
-        user_card[i] = (rand() % 14) + 1;
-    }
-    for(int i = 0; i < size; i++)
-    {
-        printf("%d ", user_card[i]);
-    }    
-    group(13, 13, 3, 13);
-    run(11, 12, 13, 15);
-       
-}
-    for(int i = 0; i < 106; i++)
-    {
-        for(int j = 0; )
-    }
-int group(int card1, int card2, int card3, int card4)
-{
-    int count = -7;
-    int arr[4];
-    arr[0] = card1;
-    arr[1] = card2;
-    arr[2] = card3;
-    arr[3] = card4;
-    
-    for(int i = 0; i <= 3; i++)
-    {
-        for(int j = 0; j <= 3; j++)
-        {
-            if(arr[i] == arr[j])
-                count++;
         }
     }
-    if(count >= 3)
-    {
-        printf("%d\n", count);
-        return 1;
-    }
 }
-int run(int card1, int card2, int card3, int card4)
-{
-    int count = 0;
-    int arr[4];
-    arr[0] = card1;
-    arr[1] = card2;
-    arr[2] = card3;
-    arr[3] = card4;
 
-    for(int i = 0; i <= 3; i++)
+void card_check(struct card c[104])
+{
+      for (int i = 0; i < 104; i++)
     {
-        if(arr[0] == arr[i])
+        if (i < 104)
         {
-            count++;
-            arr[0]++;
+            printf("color : %d, number : %d ", c[i].color, c[i].number);
         }
-    }
-    if(count >= 3)
-    {
-        printf("%d\n", count);
-        return 1;
+        else
+        {
+            printf("joker : %d ", c[i].joker);
+        }
+        printf(", count : %d\n", i + 1);
     }
 }
+
+void swap(struct card *a, struct card *b)
+{
+    struct card temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void shuffle(struct card *c)
+{
+    srand(time(NULL));
+    int j;
+    for (int i = 0; i < 104; i++)
+    {
+        j = rand() % 104;
+        swap(c + i, c + j);
+    }
+}
+
+void first_card(struct card c[104], struct card f[30])
+{
+    for(int i = 0; i < 14; i++)
+    {
+        f[i].color = c[i].color;
+        f[i].number = c[i].number;
+    }
+}
+
+
+
