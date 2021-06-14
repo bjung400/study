@@ -1,0 +1,3 @@
+total 8
+-rw-r--r--  1 bjung  staff  29  5  2 01:16 hello.sh
+-rw-r--r--  1 bjung  staff   0  5  2 01:59 ls-l.txt

@@ -1,0 +1,1 @@
+/usr/bin/grep: /usr/bin/grep: cannot execute binary file
