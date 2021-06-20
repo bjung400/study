@@ -1,3 +1,4 @@
+// 여러명일때 돈계산 해주는 프로그램
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
