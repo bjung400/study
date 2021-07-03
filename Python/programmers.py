@@ -147,3 +147,15 @@
 #     return ''.join(answer)
 # print(solution("3people unFollowed me"))
 
+# i번째 원소와 i+1번쨰 원소
+def solution(mylist):
+    answer = []
+    for num1, num2 in zip(mylist, mylist[1:]):
+        answer.append(abs(num1 - num2))
+    return answer
+if __name__ == '__main__':
+    mylist = [10, 8, 10, 3, 5]
+    print(solution(mylist))
+
+
+
