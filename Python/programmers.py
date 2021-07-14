@@ -147,7 +147,6 @@
 #     return ''.join(answer)
 # print(solution("3people unFollowed me"))
 
-#ROR
 from collections import deque
 
 def solution(maps):
@@ -179,3 +178,13 @@ def solution(maps):
     answer = graph[-1][-1]
     return answer
 print(solution([[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]))
+
+# i번째 원소와 i+1번쨰 원소
+def solution(mylist):
+    answer = []
+    for num1, num2 in zip(mylist, mylist[1:]):
+        answer.append(abs(num1 - num2))
+    return answer
+if __name__ == '__main__':
+    mylist = [10, 8, 10, 3, 5]
+    print(solution(mylist))
