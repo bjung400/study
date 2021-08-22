@@ -12,10 +12,10 @@
 # a = a + [4, 5]
 # print(a)
 
-a = [1, 2, 3]
-a = a + [4, 5]
+# a = [1, 2, 3]
+# a = a + [4, 5]
 # a.extend([4, 5]) # 리스트 끝에 iterable의 모든 항목을 넣습니다.
-print(id(a))
+# print(id(a))
 # q4 리스트의 총합 구하기
 # A = [20, 55, 67, 82, 45, 33, 90, 87, 100, 25]
 # print(sum([i for i in A if i >= 50]))
@@ -114,19 +114,29 @@ print(id(a))
 # cal2 = Calculator([6,7,8,9,10])
 # print(cal2.sum())
 # print(cal2.average())
-
-
         
+# q11 모듈 사용 방법
+# 1. sys module 사용
+# import sys
+# sys.path.append("/Users/bjung/bjung_temp/Python/jump_to_python/doit")
+# import mymod
+# 2 PYTHONPATH 환경 변수 사용
+# 3 현재 directory 사용
 
-def nextMoney(x, day):
-    for i in range(day):
-        x += (x * 0.02)
-    return x
+# q12 오류와 예외 처리
+result = 0
 
-x = 1000000000
+try:
+    # [1, 2, 3][3]
+    # "a"+1
+    7 / 0
+except TypeError:
+    result += 1
+except ZeroDivisionError:
+    result += 2
+except IndexError:
+    result += 3
+finally:
+    result += 4
 
-print("손실 : %d" % (x * 0.09))
-x = x - (x * 0.09)
-
-print(nextMoney(x, 4))
-
+print(result)
