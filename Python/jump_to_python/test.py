@@ -1,27 +1,114 @@
-# data = '''
-# park 800905-1049118
-# kim  700905-1059119
-# '''
+# q4 리스트의 총합 구하기
+# A = [20, 55, 67, 82, 45, 33, 90, 87, 100, 25]
+# print(sum([i for i in A if i >= 50]))
 
-# result = []
-# for line in data.split('\n'):
-#     word_result = []
-#     for word in line.split(" "):
-#         if len(word) == 14 and word[:6].isdigit() and word[7:].isdigit():
-#             word = word[:6] + "-" + "*******"
-#         word_result.append(" ".join(word_result))
-# print("\n".join(result))
-data = """
-park 800905-1049118
-kim  700905-1059119
-"""
+# q5 피보나치 함수
+# def Fibonacci(n):
+#     list = [0, 1]
+#     idx = 0
+#     while(True):
+#         list.append(list[idx] + list[idx + 1])
+#         idx += 1
+#         if list[-1] == n:
+#             return list
+#         elif list[-1] > n:
+#             list.pop(-1)
+#             return list
+# def fib(n):
+#     if n == 0 : return 0          # n이 0일 때는 0을 반환
+#     if n == 1 : return 1          # n이 1일 때는 1을 반환
+#     return fib(n-2) + fib(n-1)    # n이 2 이상일 때는 그 이전의 두 값을 더하여 반환
 
-result = []
-for line in data.split("\n"):
-    word_result = []
-    for word in line.split(" "):
-        if len(word) == 14 and word[:6].isdigit() and word[7:].isdigit():
-            word = word[:6] + "-" + "*******"
-        word_result.append(word)
-    result.append(" ".join(word_result))
-print("\n".join(result))
+# for i in range(100):
+#     print(fib(i))
+
+# print(Fibonacci(4))
+
+# q6 숫자의 총합 구하기
+# num = input("숫자 입력 : ")
+# num = num.split(',')
+# print(sum(list(map(int,num))))
+
+# q7 한 줄 구구단
+# num = int(input("구구단을 출력할 숫자를 입력하세요 : "))
+# print([num * i for i in range(1, 10)])
+# for i in range(1, 10):
+#     print("%d" % (num * i),end = ' ')
+
+# q8 역순 저장
+# f = open("abc.txt", 'r')
+# lines = f.readlines()
+# f.close()
+
+# lines.reverse()
+
+# f = open("abc.txt", "w")
+# for line in lines:
+#     line = line.strip()
+#     f.write(line)
+#     f.write('\n')
+# f.close()
+
+# q9 평균값 구하기
+# f = open("sample.txt", 'w')
+# f.write("""\
+# 70
+# 60
+# 55
+# 75
+# 95
+# 90
+# 80
+# 80
+# 85
+# 100""")
+# f.close()
+# f = open("sample.txt", 'r')
+# lines = f.readlines()
+# f.close()
+
+# sum = 0
+# for line in lines:
+#     score = int(line)
+#     sum += score
+# average = sum / len(lines) 
+
+# f = open("result.txt", 'w')
+# f.write(str(average))
+# f.close()
+
+# q10 사칙연산 계산기
+# class Calculator:
+#     def __init__(self, list):
+#         self.result = list
+
+#     def sum(self):
+#         return sum(self.result)
+        
+#     def average(self):
+#         return sum(self.result) / len(self.result)
+
+
+# cal1 = Calculator([1,2,3,4,5])
+# print(cal1.sum())
+# print(cal1.average())
+
+# cal2 = Calculator([6,7,8,9,10])
+# print(cal2.sum())
+# print(cal2.average())
+
+
+        
+
+def nextMoney(x, day):
+    for i in range(day):
+        x += (x * 0.02)
+    return x
+
+x = 1000000000
+
+print("손실 : %d" % (x * 0.09))
+x = x - (x * 0.09)
+
+print(nextMoney(x, 4))
+
