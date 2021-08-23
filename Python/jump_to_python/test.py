@@ -124,19 +124,43 @@
 # 3 현재 directory 사용
 
 # q12 오류와 예외 처리
-result = 0
+# result = 0
 
-try:
-    # [1, 2, 3][3]
-    # "a"+1
-    7 / 0
-except TypeError:
-    result += 1
-except ZeroDivisionError:
-    result += 2
-except IndexError:
-    result += 3
-finally:
-    result += 4
+# try:
+#     [1, 2, 3][3] # IndexError
+#     "a"+1 # TypeError
+#     7 / 0 # ZeroDivisionError 
+# except TypeError:
+#     result += 1
+# except ZeroDivisionError:
+#     result += 2
+# except IndexError:
+#     result += 3
+# finally:
+#     result += 4
 
-print(result)
+# print(result)
+
+# q13 Dashinsert 함수
+def Dashinsert(str):
+    
+    str = list(map(int, str))
+    result = []
+
+    for p1, p2 in zip(str, str[1:]):
+        result.append(p1)
+        if p1 % 2 == 0 and p2 % 2 == 0:
+            result.append('*')
+        elif p1 % 2 != 0 and p2 % 2 != 0:
+            result.append('-')
+
+    result.append(str[-1])
+    result = [str[i] for i in result if type(i) == int]
+    return result
+            
+
+    
+input_str = input("입력 : ")
+print(Dashinsert(input_str))
+
+    
