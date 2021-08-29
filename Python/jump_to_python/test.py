@@ -142,25 +142,40 @@
 # print(result)
 
 # q13 Dashinsert 함수
-def Dashinsert(str):
+# def Dashinsert(str):
     
-    str = list(map(int, str))
-    result = []
+#     str = list(map(int, str))
+#     result = []
 
-    for p1, p2 in zip(str, str[1:]):
-        result.append(p1)
-        if p1 % 2 == 0 and p2 % 2 == 0:
-            result.append('*')
-        elif p1 % 2 != 0 and p2 % 2 != 0:
-            result.append('-')
+#     for p1, p2 in zip(str, str[1:]):
+#         result.append(p1)
+#         if p1 % 2 == 0 and p2 % 2 == 0:
+#             result.append('*')
+#         elif p1 % 2 != 0 and p2 % 2 != 0:
+#             result.append('-')
 
-    result.append(str[-1])
-    result = [str[i] for i in result if type(i) == int]
-    return result
+#     result.append(str[-1])
+#     result = [str[i] for i in result if type(i) == int]
+#     return result
             
 
     
-input_str = input("입력 : ")
-print(Dashinsert(input_str))
+# input_str = input("입력 : ")
+# print(Dashinsert(input_str))
+# q13 Dashinsert
+def Dashinsert(n):
+    list = []
+    data = "4546793"
+    n = list(map(int, data))
 
-    
+    for idx, val in enumerate(n):
+        list.append(str(val))
+        if idx < len(n)-1:
+            is_odd = val % 2 == 1
+            is_next_odd = n[idx + 1] % 2 == 1
+            if is_odd and is_next_odd:
+                list.append('-')
+            elif not is_odd and not is_next_odd:
+                list.append('*')
+    print("".join(list))
+Dashinsert()
