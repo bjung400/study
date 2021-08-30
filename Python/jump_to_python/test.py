@@ -141,41 +141,69 @@
 
 # print(result)
 
-# q13 Dashinsert 함수
-# def Dashinsert(str):
-    
-#     str = list(map(int, str))
-#     result = []
-
-#     for p1, p2 in zip(str, str[1:]):
-#         result.append(p1)
-#         if p1 % 2 == 0 and p2 % 2 == 0:
-#             result.append('*')
-#         elif p1 % 2 != 0 and p2 % 2 != 0:
-#             result.append('-')
-
-#     result.append(str[-1])
-#     result = [str[i] for i in result if type(i) == int]
-#     return result
-            
-
-    
-# input_str = input("입력 : ")
-# print(Dashinsert(input_str))
 # q13 Dashinsert
-def Dashinsert(n):
-    list = []
-    data = "4546793"
-    n = list(map(int, data))
+# def Dashinsert(number):
+#     result = []
+#     data = number
+#     num = list(map(int, data))
+#     for i, n in enumerate(num):
+#         result.append(str(n))
+#         if i < len(num)-1:
+#             odd = n % 2 != 0
+#             next_odd = num[i+1] % 2 != 0
 
-    for idx, val in enumerate(n):
-        list.append(str(val))
-        if idx < len(n)-1:
-            is_odd = val % 2 == 1
-            is_next_odd = n[idx + 1] % 2 == 1
-            if is_odd and is_next_odd:
-                list.append('-')
-            elif not is_odd and not is_next_odd:
-                list.append('*')
-    print("".join(list))
-Dashinsert()
+#             if odd and next_odd: result.append('-')
+#             elif not odd and not next_odd: result.append('*')
+#     return ''.join(result)
+
+# print(Dashinsert("4546793"))
+
+# q14 문자열 압축하기
+# def compress_string(data):
+#     result = []
+#     count = 1
+#     for i, s in enumerate(data):
+#         if i < len(data)-1:
+#             if s == data[i+1]:
+#                 count += 1
+#             elif s != data[i+1]:
+#                 result.append(s)
+#                 result.append(str(count))
+#                 count = 1
+#         else:
+#             result.append(s)
+#             result.append(str(count))
+#     return ''.join(result)
+
+# def compress_string(s):
+#     _c = ""
+#     cnt = 0
+#     result = ""
+#     for c in s:
+#         if c != _c: # check
+#             _c = c 
+#             if cnt: result += str(cnt) #character count add
+#             result += c
+#             cnt = 1 #count reset
+#         else: # c == _c: cnt += 1
+#             cnt += 1
+#     if cnt: result += str(cnt)
+#     return result       
+        
+# print(compress_string("aaabbcccccca"))
+# q15 Duplicate Numbers
+def dup_number(number):
+    number = list(map(int, number))
+    result = []
+    check = 0
+    for i in number:
+        if i != result:
+            result.append(i)
+    return len(result)
+
+print(dup_number("012322456789"))
+        
+        
+
+            
+            
