@@ -192,16 +192,15 @@
         
 # print(compress_string("aaabbcccccca"))
 # q15 Duplicate Numbers
-def dup_number(number):
-    number = list(map(int, number))
-    result = []
-    check = 0
-    for i in number:
-        if i != result:
-            result.append(i)
-    return len(result)
-
-print(dup_number("012322456789"))
+# def dup_number(number):
+#     result = ""
+#     for i in number:
+#         if i not in result:
+#             result += (i)
+#         else: return False
+#     return len(result) == 10
+    
+# print(dup_number("012322456789"))
         
         
 
