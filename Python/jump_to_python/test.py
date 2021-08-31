@@ -201,6 +201,40 @@
 #     return len(result) == 10
     
 # print(dup_number("012322456789"))
+
+# q16 모스 부호 해독
+dic = {
+    '.-':'A','-...':'B','-.-.':'C','-..':'D','.':'E','..-.':'F',
+    '--.':'G','....':'H','..':'I','.---':'J','-.-':'K','.-..':'L',
+    '--':'M','-.':'N','---':'O','.--.':'P','--.-':'Q','.-.':'R',
+    '...':'S','-':'T','..-':'U','...-':'V','.--':'W','-..-':'X',
+    '-.--':'Y','--..':'Z'
+}
+
+# def morse(src):
+#     result = []
+#     for i, word in enumerate(src.split("  ")):
+#         for char in word.split(' '):
+#             result.append(dic[char])
+#         print(i)
+#         result.append(" ")
+
+#     return ''.join(result)
+
+# print(morse('.... .  ... .-.. . . .--. ...  . .- .-. .-.. -.--'))
+
+reverse_dict = dict(map(reversed, dic.items()))
+
+def morse(src):
+    result = []
+    for i, word in enumerate(src):
+        if word in reverse_dict.keys():
+            result.append(reverse_dict[word])
+        result.append(' ')
+    return ''.join(result)
+
+print(morse("SEND MONEY"))
+    
         
         
 
