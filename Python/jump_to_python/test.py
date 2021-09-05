@@ -203,13 +203,13 @@
 # print(dup_number("012322456789"))
 
 # q16 모스 부호 해독
-dic = {
-    '.-':'A','-...':'B','-.-.':'C','-..':'D','.':'E','..-.':'F',
-    '--.':'G','....':'H','..':'I','.---':'J','-.-':'K','.-..':'L',
-    '--':'M','-.':'N','---':'O','.--.':'P','--.-':'Q','.-.':'R',
-    '...':'S','-':'T','..-':'U','...-':'V','.--':'W','-..-':'X',
-    '-.--':'Y','--..':'Z'
-}
+# dic = {
+#     '.-':'A','-...':'B','-.-.':'C','-..':'D','.':'E','..-.':'F',
+#     '--.':'G','....':'H','..':'I','.---':'J','-.-':'K','.-..':'L',
+#     '--':'M','-.':'N','---':'O','.--.':'P','--.-':'Q','.-.':'R',
+#     '...':'S','-':'T','..-':'U','...-':'V','.--':'W','-..-':'X',
+#     '-.--':'Y','--..':'Z'
+# }
 
 # def morse(src):
 #     result = []
@@ -223,20 +223,42 @@ dic = {
 
 # print(morse('.... .  ... .-.. . . .--. ...  . .- .-. .-.. -.--'))
 
-reverse_dict = dict(map(reversed, dic.items()))
+# reverse_morse
+# reverse_dict = dict(map(reversed, dic.items()))
 
-def morse(src):
-    result = []
-    for i, word in enumerate(src):
-        if word in reverse_dict.keys():
-            result.append(reverse_dict[word])
-        result.append(' ')
-    return ''.join(result)
+# def morse(src):
+#     result = []
+#     for i, word in enumerate(src):
+#         if word in reverse_dict.keys():
+#             result.append(reverse_dict[word])
+#         result.append(' ')
+#     return ''.join(result)
 
-print(morse("SEND MONEY"))
+# print(morse("SEND MONEY"))
     
-        
-        
+# q17 기초 메타 문자
+# import re
+# p = re.compile("a[.]{3,}b")
 
-            
-            
+# print(p.match("acccb"))
+# print(p.match("a....b")) # match
+# print(p.match("aaaab"))
+# print(p.match("a.cccb"))
+
+# q18 문자열 검색
+# import re
+# p = re.compile("[a-z]+")
+# m = p.search("5 python")
+# print(m.start() + m.end()) # 2 + 8(Sliceing)
+
+# q19 그루핑
+import re
+phone_number ="""\
+jong 010-3700-6377
+kim 010-9909-7789
+lee 010-8789-7768
+"""
+
+p = re.compile(r"\w+\s\d+[-]\d+[-]\d+")
+m = p.findall(phone_number)
+print(m)
