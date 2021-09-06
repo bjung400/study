@@ -252,13 +252,24 @@
 # print(m.start() + m.end()) # 2 + 8(Sliceing)
 
 # q19 그루핑
-import re
-phone_number ="""\
-jong 010-3700-6377
-kim 010-9909-7789
-lee 010-8789-7768
-"""
+# import re
+# phone_number ="""\
+# jong 010-3700-6377
+# kim 010-9909-7789
+# lee 010-8789-7768
+# """
 
-p = re.compile(r"\w+\s\d+[-]\d+[-]\d+")
-m = p.findall(phone_number)
-print(m)
+# p = re.compile("(\d{3}[-]\d{4}[-])\d{4}")
+# m = p.sub("\g<1>####", phone_number)
+# print(m)
+
+# q20 전방 탐색
+import re
+email = "jung@gmail.net"
+p = re.compile('''
+.*[@].*[.]# test@test.
+(?=com$|net$)# 긍정형 전방 탐색 com or net가 뒤에있어야함
+.*$''', re.VERBOSE)
+print(p.match("pahkey@gmail.com"))
+print(p.match("kim@daum.net"))
+print(p.match("lee@myhome.co.kr"))
