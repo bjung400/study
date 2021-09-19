@@ -19,16 +19,32 @@
 # print(max(input()[::-1].split()))
 
 # 1018
-f = 8
-n, m = map(int, input().split())
-list = []
+# N, M = map(int, input().split())
 
-for i in range(n):
-    list.append(input())
+# original = []
+# count = []
 
-for i in range(n-f):
-    for 
-    
-    
+# [original.append(input()) for _ in range(N)]
 
-print(list)
+# for a in range(N - 7):
+#     for b in range(M - 7):
+#         check1 = 0
+#         check2 = 0
+#         for i in range(a, a+8):
+#             for j in range(b, b+8):
+#                 if (i+j) % 2 == 0:
+#                     if original[i][j] == 'W':
+#                         check1 += 1
+#                     if original[i][j] == 'B':
+#                         check2 += 1
+#                 else:
+#                     if original[i][j] == 'B':
+#                         check1 += 1
+#                     if original[i][j] == 'W':
+#                         check2 += 1
+#         count.append(min(check1, check2))
+
+# print(min(count))
+N,M=map(int,input().split())
+r=range;L=[[ord(c)+i+j&1for j,c in enumerate(input())]for i in r(N)]
+print(min(32-abs(sum(4-sum(l[j:j+8])for l in L[i:i+8]))for i in r(N-7)for j in r(M-7)))
