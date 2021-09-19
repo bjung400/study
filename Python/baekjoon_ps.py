@@ -19,10 +19,16 @@
 # print(max(input()[::-1].split()))
 
 # 1018
+f = 8
 n, m = map(int, input().split())
 list = []
-mini = []
 
-for i in range(n): list.append(input())
+for i in range(n):
+    list.append(input())
+
+for i in range(n-f):
+    for 
+    
+    
 
 print(list)
