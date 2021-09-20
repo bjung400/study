@@ -46,5 +46,5 @@
 
 # print(min(count))
 N,M=map(int,input().split())
-r=range;L=[[ord(c)+i+j&1for j,c in enumerate(input())]for i in r(N)]
-print(min(32-abs(sum(4-sum(l[j:j+8])for l in L[i:i+8]))for i in r(N-7)for j in r(M-7)))
+L=[[ord(c)+i+j&1for j,c in enumerate(input())]for i in range(N)]
+print(min(32-abs(sum(4-sum(l[j:j+8])for l in L[i:i+8]))for i in range(N-7)for j in range(M-7)))
