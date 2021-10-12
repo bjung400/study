@@ -182,6 +182,7 @@
 # print(f"이름 : {name2} 나이 : {age2}")
 
 # 038 컴마 제거하기
+# replace로 comma제거후 int()함수로 정수로 변환
 상장주식수 = "5,969,782,550"
 comma_remove = 상장주식수.replace(',','')
 type_changed = int(comma_remove)
