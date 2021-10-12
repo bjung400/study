@@ -125,6 +125,65 @@
 # print(lang)
 
 # 029 replace 메서드
-string = 'abcdfe2a354a32a'
-result = 'A'+string[1:]
-print(result)
+# string = 'abcdfe2a354a32a'
+# result = string.replace('a', 'A')
+# print(result)
+
+# 030 replace 메서드
+# 문자열은 immutable한 자료형이므로 그대로 출력된다.
+# replace 메서드를 사용하면 원본은 그대로 둔채 변경된 새로운 문자열 객체를 Return해준다.
+# string = 'abcd'
+# string.replace('b', 'B')
+# print(string)
+
+# 031 문자열 합치기
+# 문자열에 대한 덧셈은 문자열의 연결을 의미한다.
+# 따라서 "34"라는 새로운 문자열이 생성되고 print함수에 의해 출력된다.
+# a = "3"
+# b = "4"
+# print(a+b)
+
+# 032 문자열 곱하기
+# 문자열에 대한 곱셉은 문자열의 반복을 의미한다.
+# print("Hi"*3)
+
+# 033 문자열 곱하기
+# print('-'*80)
+
+# 034 문자열 곱하기
+# t1 = 'python'
+# t2 = 'jave'
+# t3 = t1+' '+t2+' '
+# print(t3*4)
+
+# 035 문자열 출력(% formatting을 사용할때)
+# name1 = "김민수" 
+# age1 = 10
+# name2 = "이철희"
+# age2 = 13
+# print("이름 : %s 나이 : %d" % (name1, age1))
+# print("이름 : %s 나이 : %d" % (name2, age2))
+
+# 036 문자열 출력(문자열의 format() 메서드를 사용할때)
+# name1 = "김민수" 
+# age1 = 10
+# name2 = "이철희"
+# age2 = 13
+# print("이름 : {} 나이 : {}".format(name1, age1))
+# print("이름 : {} 나이 : {}".format(name2, age2))
+
+# 037 문자열 출력
+# %-formatting 이나 str.format()보다 훨씬 직관적으로 사용가능하다
+# name1 = "김민수" 
+# age1 = 10
+# name2 = "이철희"
+# age2 = 13
+# print(f"이름 : {name1} 나이 : {age1}")
+# print(f"이름 : {name2} 나이 : {age2}")
+
+# 038 컴마 제거하기
+상장주식수 = "5,969,782,550"
+comma_remove = 상장주식수.replace(',','')
+type_changed = int(comma_remove)
+print(type_changed, type(type_changed))
+
