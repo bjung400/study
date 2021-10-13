@@ -183,8 +183,19 @@
 
 # 038 컴마 제거하기
 # replace로 comma제거후 int()함수로 정수로 변환
-상장주식수 = "5,969,782,550"
-comma_remove = 상장주식수.replace(',','')
-type_changed = int(comma_remove)
-print(type_changed, type(type_changed))
+# 상장주식수 = "5,969,782,550"
+# comma_remove = 상장주식수.replace(',','')
+# type_changed = int(comma_remove)
+# print(type_changed, type(type_changed))
+
+# 039 문자열 슬라이싱
+# 분기 = "2020/03(E) (IFRS연결)"
+# print(분기[:7])
+
+# 040 strip 메서드
+# strip() 메서드는 문자열에서 좌우 공백을 제거해주고 
+# 새로운 문자열이 반환됩니다.
+# data = "    w삼성전자   "
+# result = data.strip().strip('w')
+# print(result)
 
