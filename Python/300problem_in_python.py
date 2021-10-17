@@ -48,7 +48,7 @@
 # 013 문자열 출력
 # s = "hello"
 # t = "python"
-# print("%s! %s"% (s, t))
+# print(!"% (s, t))
 # print(s+'!', t)
 
 # 014 파이썬을 이용한 값 계산
@@ -164,8 +164,8 @@
 # age1 = 10
 # name2 = "이철희"
 # age2 = 13
-# print("이름 : %s 나이 : %d" % (name1, age1))
-# print("이름 : %s 나이 : %d" % (name2, age2))
+# print("이름 : 나이 : %d" % (name1, age1))
+# print("이름 : 나이 : %d" % (name2, age2))
 
 # 036 문자열 출력(문자열의 format() 메서드를 사용할때)
 # name1 = "김민수" 
@@ -527,9 +527,518 @@
 # icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
 # print(sum(icecream.values()))
 
-# 098 098 딕셔너리 update 메서드
-# 아래의 new_product 딕셔너리를 다음 icecream 딕셔너리에 추가하라.
-icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
-new_product = {'팥빙수':2700, '아맛나':1000}
-icecream = icecream + new_product
-print(icecream)
+# 098 딕셔너리 update 메서드
+# icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
+# new_product = {'팥빙수':2700, '아맛나':1000}
+# icecream.update(new_product)
+# print(icecream)
+
+# 099 zip과 dict
+# keys = ("apple", "pear", "peach")
+# vals = (300, 250, 400)
+# result = dict(zip(keys, vals))
+# print(result)
+
+# 100 zip과 dict
+# date = ['09/05', '09/06', '09/07', '09/08', '09/09']
+# close_price = [10500, 10300, 10100, 10800, 11000]
+# close_table = dict(zip(date, close_price))
+# print(close_table)
+
+# 07. 파이썬 분기문
+# 파이썬은 if라는 키워드를 통해 분기문을 만들 수 있습니다.
+
+# 101 파이썬에서 True 혹은 False를 갖는 데이터 타입은 무엇인가? bool
+# result = True
+# print(type(result))
+
+# 102 아래 코드의 출력 결과를 예상하라 False
+# print(3 == 5)
+
+# 103 아래 코드의 출력 결과를 예상하라 True
+# print(3 < 5)
+
+# 104 아래 코드의 결과를 예상하라. True
+# x = 4
+# print(1 < x < 5)
+
+# 105 아래 코드의 결과를 예상하라. True
+# print ((3 == 3) and (4 != 3))
+
+# 106 아래 코드에서 에러가 발생하는 원인에 대해 설명하라.
+# 지원하지않는 연산자입니다. 부등호가 먼저들어가야합니다.
+# print(3 <= 4)
+
+# 107 아래 코드의 출력 결과를 예상하라 
+# 조건을 만족하지 않기 때문에 아무 결과도 출력되지 않습니다.
+# if 4 < 3:
+#   print("Hello World")
+
+# 108 아래 코드의 출력 결과를 예상하라 Hi, there
+# if 4 < 3:
+#     print("Hello World.")
+# else:
+#     print("Hi, there.")
+
+# 109 아래 코드의 출력 결과를 예상하라 1, 2, 4
+# if True :
+#     print ("1")
+#     print ("2")
+# else :
+#     print("3")
+# print("4")
+
+# 110 아래 코드의 출력 결과를 예상하라 3, 5
+# if True :
+#     if False:
+#         print("1")
+#         print("2")
+#     else:
+#         print("3")
+# else :
+#     print("4")
+# print("5")
+
+# 111 사용자로부터 입력받은 문자열을 두 번 출력하라. 
+# string = input("입력 : ")
+# print(string*2)
+
+# 112 사용자로부터 하나의 숫자를 입력받고, 입력 받은 숫자에 10을 더해 출력하라.
+# num = int(input("숫자를 입력하세요 : "))
+# print(num+10)
+
+# 113 사용자로부터 하나의 숫자를 입력 받고 짝수/홀수를 판별하라.
+# num = int(input("숫자를 입력하세요 : "))
+# if num % 2 == 0: print("짝수")
+# else: print("홀수")
+
+# 114 사용자로부터 값을 입력받은 후 해당 값에 20을 더한 값을 출력하라. 
+# 단 사용자가 입력한 값과 20을 더한 계산 값이 255를 초과하는 경우 255를 출력해야 한다.
+# num = int(input("입력값 : "))
+# if 255 >= num+20: print(f"출력값 : {num+20}")
+# else: print(f"출력값 : {255}")
+
+# 115 사용자로부터 하나의 값을 입력받은 후 해당 값에 20을 뺀 값을 출력하라. 
+# 단 출력 값의 범위는 0~255이다. 예를 들어 결괏값이 0보다 작은 값이되는 경우 0을 출력하고 255보다 큰 값이 되는 경우 255를 출력해야 한다.
+# num = int(input("입력값 : "))
+# num = num-20
+# if num > 255: print(255)
+# elif num < 0: print(0)
+# else: print(num)
+
+# 116 사용자로부터 입력 받은 시간이 정각인지 판별하라.
+# t = input("시간 : ")
+# if t[3:] == "00": print("정각입니다.")
+# else: print("정각이 아닙니다.")
+
+# 117 사용자로 입력받은 단어가 아래 fruit 리스트에 포함되어 있는지를 확인하라. 포함되었다면 "정답입니다"를 아닐 경우 "오답입니다" 출력하라.
+# for문을 사용하지 않고도 in으로 가능
+# fruit = ["사과", "포도", "홍시"]
+# favorite = input("좋아하는 과일은? ")
+# if favorite in fruit: print("정답입니다.")
+# else: print("오답입니다.")
+
+# 118 투자 경고 종목 리스트가 있을 때 사용자로부터 종목명을 입력 받은 후 해당 종목이 투자 경고 종목이라면 '투자 경고 종목입니다'를 아니면 "투자 경고 종목이 아닙니다."를 출력하는 프로그램을 작성하라.
+# warn_investment_list = ["Microsoft", "Google", "Naver", "Kakao", "SAMSUNG", "LG"]
+# investment = input("종목을 입력하세요 : ")
+# if investment in warn_investment_list: print("투자 경고 종목입니다.")
+# else: print("투자 경고 종목이 아닙니다.")
+
+# 119 아래와 같이 fruit 딕셔너리가 정의되어 있다. 사용자가 입력한 값이 딕셔너리 키 (key) 값에 포함되었다면 "정답입니다"를 아닐 경우 "오답입니다" 출력하라.
+# fruit = {"봄" : "딸기", "여름" : "토마토", "가을" : "사과"}
+# favorite_weather = input("제가 좋아하는  계절은 : ")
+# if favorite_weather in list(fruit.keys()): print("정답입니다.")
+# else: print("오답입니다.")
+
+# 120 아래와 같이 fruit 딕셔너리가 정의되어 있다. 
+# 사용자가 입력한 값이 딕셔너리 값 (value)에 포함되었다면 "정답입니다"를 아닐 경우 "오답입니다" 출력하라.
+# fruit = {"봄" : "딸기", "여름" : "토마토", "가을" : "사과"}
+# favorite_fruit = input("제가 좋아하는  과일은 : ")
+# if favorite_fruit in fruit.values(): print("정답입니다.")
+# else: print("오답입니다.")
+
+# 121 사용자로부터 문자 한 개를 입력 받고, 소문자일 경우 대문자로, 
+# 대문자 일 경우, 소문자로 변경해서 출력하라.
+# string = input()
+# if string.islower(): print(string.upper())
+# else: print(string.lower())
+
+# 122 점수 구간에 해당하는 학점이 아래와 같이 정의되어 있다. 사용자로부터 score를 입력받아 학점을 출력하라.
+# score = int(input("score : "))
+# grade = ""
+# if 81 <= score <= 100: grade = "A"
+# elif 61 <= score <= 80: grade = "B"
+# elif 41 <= score <= 60: grade = "C"
+# elif 21 <= score <= 40: grade = "D"
+# else: grade = "E"
+# print(f"grade is {grade}")
+
+# 123 사용자로부터 달러, 엔, 유로, 또는 위안 금액을 입력받은 후 
+# 이를 원으로 변환하는 프로그램을 작성하라. 각 통화별 환율은 다음과 같다. 사용자는 100 달러, 1000 엔, 13 유로, 100 위안과 같이 금액과 통화명 사이에 공백을 넣어 입력한다고 가정한다.
+# exchange_rate = {
+#     # 21.10.16
+#     "USD" : 1182,
+#     "JPY" : 10.36,
+#     "EUR" : 1372,
+#     "CNY" : 183.78}
+# money, currency = input("입력 : ").split()
+# print(f"{float(money)*exchange_rate[currency]}원")
+
+# 124 사용자로부터 세 개의 숫자를 입력 받은 후 가장 큰 숫자를 출력하라.
+# l = list(int(input(f"input number{i+1} : ")) for i, v in enumerate(range(3)))
+# print(max(l))
+
+# 125 휴대폰 번호 앞자리에 따라 통신사는 아래와 같이 구분된다. 
+# 사용자로부터 휴대전화 번호를 입력 받고, 통신사를 출력하는 프로그램을 작성하라.
+# carrier = {
+#     "011":"SKT",
+#     "016":"KT",
+#     "019":"LGU",
+#     "010":"알수없음"
+# }
+# n, *_ = input("휴대전화 번호 입력 : ").split('-')
+# print(f"당신은 {carrier[n]} 사용자 입니다.")
+
+# 126 우편번호는 5자리로 구성되는데, 앞의 세자리는 구를 나타낸다. 
+# 예를들어, 강북구의 경우 010, 011, 012 세 자리로 시작한다
+# 강북구 = ["010", "011", "012"]
+# 도봉구 = ["013", "014", "015"]
+# 노원구 = ["016", "017", "018", "019"]
+# zip_code = input("우편번호 : ")
+# if zip_code[:3] in 강북구: print("강북구")
+# elif zip_code[:3] in 도봉구: print("도봉구")
+# elif zip_code[:3] in 노원구: print("노원구")
+# else: print("찾을수 없는 정보입니다.")
+
+# 127 주민등록번호 뒷 자리 7자리 중 첫째 자리는 성별을 나타내는데, 
+# 1, 3은 남자 2, 4는 여자를 의미한다. 사용자로부터 13자리의 주민등록번호를 입력 받은 후 성별 (남자, 여자)를 출력하는 프로그램을 작성하라.
+# men = ['1', '3']
+# woman = ['2', '4']
+# idcard = input("주민등록번호 : ")
+# if idcard[-7] in men: print("남자")
+# elif idcard[-7] in woman: print("여자")
+# else: print("잘못된 정보입니다.")
+
+# 128 주민등록번호의 뒷 자리 7자리 중 두번째와 세번째는 지역코드를 의미한다.
+# 주민 등록 번호를 입력 받은 후 출생지가 서울인지 아닌지 판단하는 코드를 작성하라
+# local = input("주민등록번호 : ").split('-')[1][1:3]
+# if 0 <= int(local) <= 8: print("서울입니다")
+# else: print("서울이 아닙니다.")
+
+"""129 주민등록번호는 13자리로 구성되는데 마지막 자리수는 주민등록번호의 
+   유효성을 체크하는데 사용된다. 먼저 앞에서부터 12자리의 숫자에 
+   2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5를 차례로 곱한 뒤 그 값을 전부 더한다. 
+   연산 결과 값을 11로 나누면 나머지가 나오는데 11에서 나머지를 뺀 값이 
+   주민등록번호의 마지막 번호가 된다.
+"""
+# idcard = input("주민등록번호 : ").replace('-','')
+# num = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 1]
+# l = []
+# for i, j in zip(idcard,num):
+#     l.append(int(i)*j)
+# l.pop()
+# if 11-(sum(l)%11) == int(idcard[-1]): print("유효한 주민등록 번호입니다.")
+# else: print("유효하지 않은 주민등록 번호입니다.")
+'''
+130
+아래 코드는 비트코인의 가격 정보를 딕셔너리로 가져오는 코드이다.
+btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되어있다.
+최고가와 최저가의 차이를 변동폭으로 정의할 때
+시가 + 변동폭이 최고가 보다 높을 경우 "상승장",
+아닌경우 "하락장" 문자열을 출력하라.
+'''
+# import requests
+# btc = requests.get("https://api.bithumb.com/public/ticker/").json()['data']
+# change_price = float(btc["min_price"])-float(btc["max_price"]) # 변동폭
+# opening_price = float(btc["opening_price"])
+# max_price = float(btc["max_price"])
+
+# print(change_price, opening_price, max_price)
+
+# if opening_price+change_price > max_price:
+#    print("상승장")
+# else:
+#    print("하락장")
+
+# 08. 파이썬 반복문
+# 파이썬 for 문은 횟수가 정해져 있거나 상대적으로 횟수가 
+# 적은 경우에 대한 반복에 주로 사용됩니다. 파이썬 while문은 
+# 횟수가 상대적으로 크거나 무한 루프 형태의 반복문에 사용됩니다.
+
+# 131 for문의 실행결과를 예측하라.
+# 리스트에 들어있는 문자열이 하나씩 출력된다.
+# 과일 = ["사과", "귤", "수박"]
+# for 변수 in 과일:
+#     print(변수)
+
+# 132 for문의 실행결과를 예측하라.
+# 리스트의 요소의 개수만큼 print문이 실행된다
+# 과일 = ["사과", "귤", "수박"]
+# for 변수 in 과일:
+#   print("#####")
+
+# 133 다음 for 문과 동일한 기능을 수행하는 코드를 작성하세요.
+# for 변수 in ["A", "B", "C"]:
+#   print(변수)
+# "변수 바인딩(라인 1) -> 변수 출력 (라인 2)" 과정을 
+# 자료구조 데이터 개수 만큼 반복합니다.
+# 변수 = 'A'
+# print(변수)
+# 변수 = 'B'
+# print(변수)
+# 변수 = 'C'
+# print(변수)
+
+# 134 for문을 풀어서 동일한 동작을하는 코드를 작성하라.
+# for 변수 in ["A", "B", "C"]:
+#   print("출력 :", 변수)
+# 변수 = 'A'
+# print("출력 :", 변수)
+# 변수 = 'B'
+# print("출력 :", 변수)
+# 변수 = 'C'
+# print("출력 :", 변수)  
+
+# 135 for문을 풀어서 동일한 동작을 하는 코드를 작성하라.
+# 들여쓰기된 코드의 실행이 끝나면 라인 1로 이동해서 변수에 두 번째
+# 데이터를 바인딩합니다. 그리고 들여쓰기된 코드를 실행합니다.
+# for 변수 in ["A", "B", "C"]:
+#   b = 변수.lower()
+#   print("변환 :", b)
+
+# 변수 = 'A'
+# b = 변수.lower()
+# print("변환 :", b)
+# 변수 = 'B'
+# b = 변수.lower()
+# print("변환 :", b)
+# 변수 = 'C'
+# b = 변수.lower()
+# print("변환 :", b)
+
+# 136 다음 코드를 for문으로 작성하라.
+# 변수 = 10
+# print(변수)
+# 변수 = 20
+# print(변수)
+# 변수 = 30
+# print(변수)
+
+# l = [10, 20, 30]
+# for i in l: print(i)
+
+# 137 다음 코드를 for문으로 작성하라.
+# print(10)
+# print(20)
+# print(30)
+
+# for i in [10, 20, 30]: print(i)
+
+# 138 다음 코드를 for문으로 작성하라.
+# print(10)
+# print("-------")
+# print(20)
+# print("-------")
+# print(30)
+# print("-------")
+
+# for i in [10, 20, 30]: print(i, "-------", sep='\n')
+
+# 139 다음 코드를 for문으로 작성하라.
+# print("++++")
+# print(10)
+# print(20)
+# print(30)
+
+# print("++++")
+# for i in [10, 20, 30]: print(i)
+
+# if문으로 0번쨰 index일때 ++++출력 
+# for i, v in enumerate([10, 20, 30]):
+#    if i == 0: print("++++", v, sep='\n')
+#    else: print(v)
+   
+# 140 다음 코드를 for문으로 작성하라.
+# print("-------")
+# print("-------")
+# print("-------")
+# print("-------")
+
+# for i in range(4): print("-------")
+
+# 141 다음과 같이 판매가가 저장된 리스트가 있을 때 부가세가 포함된 
+# 가격을 for 문을 사용해서 화면에 출력하라. 단 부가세는 10원으로 가정한다.
+# 리스트 = [100, 200, 300]
+# for i in 리스트: print(i+10)
+
+# 142 for 문을 사용해서 리스트에 저장된 값을 다음과 같이 출력하라.
+# 리스트 = ["김밥", "라면", "튀김"]
+# for i in 리스트: print(f"오늘의 메뉴 : {i}")
+
+# 143 리스트에 주식 종목이름이 저장돼 있다.
+# 리스트 = ["SK하이닉스", "삼성전자", "LG전자"]
+# for i in 리스트: print(len(i))
+
+# 144 리스트에는 동물이름이 문자열로 저장돼 있다.
+# 리스트 = ['dog', 'cat', 'parrot']
+# for i in 리스트: print(i, len(i))
+
+# 145 리스트에 동물 이름 저장돼 있다.
+# 리스트 = ['dog', 'cat', 'parrot']
+# for i in 리스트: print(i[0])
+
+# 146 리스트에는 세 개의 숫자가 바인딩돼 있다.
+# 리스트 = [1, 2, 3]
+# for i in 리스트: print(f"3 x {i}")
+
+# 147 리스트에는 세 개의 숫자가 바인딩돼 있다.
+# 리스트 = [1, 2, 3]
+# for i in 리스트: print(f"3 x {i} = {3*i}")
+
+# 148 리스트에는 네 개의 문자열이 바인딩돼 있다.
+# 리스트 = ["가", "나", "다", "라"]
+# for i in 리스트[1:]: print(i)
+
+# 149 리스트에는 네 개의 문자열이 바인딩돼 있다.
+# 리스트 = ["가", "나", "다", "라"]
+# 리스트 슬라이싱 [시작:끝:증감폭] 증감폭을 2로 설정해서 가, 다를 슬라이싱함
+# for i in 리스트[::2]: print(i)
+
+# 150 라, 다, 나, 가
+# 리스트 = ["가", "나", "다", "라"]
+# for i in 리스트[::-1]: print(i)
+
+# 151 음수를 출력
+# 리스트 = [3, -20, -3, 44]
+# for i in 리스트:
+#    if i < 0: print(i)
+
+# 152 for문을 사용해서 3의 배수만을 출력하라.
+# 리스트 = [3, 100, 23, 44]
+# for i in 리스트:
+#    if i % 3 == 0: print(i)
+
+# 153 리스트에서 20 보다 작은 3의 배수를 출력하라
+# 리스트 = [13, 21, 12, 14, 30, 18]
+# for i in 리스트:
+#    # 가독성을 위해 괄호로 구분
+#    if (20 > i) and (i % 3 == 0): print(i)
+
+# 154 리스트에서 세 글자 이상의 문자를 화면에 출력하라
+# 리스트 = ["I", "study", "python", "language", "!"]
+# for i in 리스트:
+#    if len(i) >= 3: print(i)
+
+# 155 리스트에서 대문자만 화면에 출력하라.
+# 리스트 = ["A", "b", "c", "D"]
+# for i in 리스트:
+#    if i.isupper(): print(i)
+
+# 156 리스트에서 소문자만 화면에 출력하라.
+# 리스트 = ["A", "b", "c", "D"]
+# for i in 리스트:
+#    if not i.isupper(): print(i)
+
+# 157 이름의 첫 글자를 대문자로 변경해서 출력하라.
+# 리스트 = ['dog', 'cat', 'parrot']
+'''
+1) 인덱싱으로 첫번째 문자를 가져온다.
+2) upper() 함수로 대문자로 변경한다.
+3) 변경한 대문자와 나머지 문자를 이어붙인다.
+'''
+# for i in 리스트:
+#    print(i[0].upper()+i[1:])
+
+# 158 파일 이름이 저장된 리스트에서 확장자를 제거하고 파일 이름만 
+# 화면에 출력하라. (힌트: split() 메서드)
+# 리스트 = ['hello.py', 'ex01.py', 'intro.hwp']
+# for i in 리스트:
+#    print(i.split('.')[0])
+
+# 159 파일 이름이 저장된 리스트에서 확장자가 .h인 파일 이름을 출력하라.
+# 리스트 = ['intra.h', 'intra.c', 'define.h', 'run.py']
+# for i in 리스트:
+#    if i.split('.')[1] == 'h' or i.split('.')[1] == 'c':
+#       print(i)
+
+# 161 for문과 range 구문을 사용해서 0~99까지 
+# 한 라인에 하나씩 순차적으로 출력하는 프로그램을 작성하라.
+# for i in range(100):
+#    print(i)
+
+# 162 월드컵은 4년에 한 번 개최된다. range()를 사용하여 
+# 2002~2050년까지 중 월드컵이 개최되는 연도를 출력하라.
+# range의 세번 째 파라미터는 증감폭을 결정합니다.
+# for i in range(2002, 2051, 4):
+#    print(i)
+
+# 163 1부터 30까지의 숫자 중 3의 배수를 출력하라.
+# for i in range(3, 31, 3): print(i)
+
+# 164 99부터 0까지 1씩 감소하는 숫자들을, 한 라인에 하나씩 출력하라.
+# for i in range(99, -1, -1): print(i)
+
+# 다른 방법
+# for i in range(100):
+#     print(99 - i)
+
+# 165 for문을 사용해서 아래와 같이 출력하라.
+# 0.0, 0.1 ~ 0.9
+# for i in range(10): print(f"0.{i}")
+
+# 다른방법
+# for num in range(10) :
+#     print(num / 10)
+
+# 166 구구단 3단을 출력하라.
+# for i in range(1, 10): print(f"3x{i} = {3*i}")
+
+# 167 구구단 3단을 출력하라. 단 홀수 번째만 출력한다.
+# for i in range(1, 10, 2):
+#    print(f"3x{i} = {3*i}")
+
+# 168 1~10까지의 숫자에 대해 모두 더한 값을 출력하는 프로그램을 
+# for 문을 사용하여 작성하라.
+# sum = 0
+# for i in range(1, 11):
+#    sum += i
+# print(f"합 : {sum}")
+
+# 169 1~10까지의 숫자 중 모든 홀수의 합을 출력하는 프로그램을 
+# for 문을 사용하여 작성하라.
+# sum = 0
+# for i in range(1, 11, 2):
+#    sum += i
+# print(sum)
+
+# 170 1~10까지의 숫자를 모두 곱한 값을 출력하는 프로그램을 
+# for 문을 사용하여 작성하라.
+# sum = 1
+# for i in range(1, 11):
+#    sum*=i
+# print(sum)
+
+# 171 아래와 같이 리스트의 데이터를 출력하라. 단, for문과 range문을 사용하라.
+# price_list = [32100, 32150, 32000, 32500]
+# for i in range(len(price_list)): print(price_list[i])
+
+# iterable : member를 하나씩 차례로 반환 가능한 object
+# 예로는 sequence type인 list, str, tuple 
+
+# iterator : next() 메서드로 데이터를 순차적으로 호출 가능한 object
+# iterable을 iterator 로 변환하고 싶다면, iter() 사용
+# x = [1,2,3] # Iterable 
+# y = iter(x) # iterator
+# print(f"x = {type(x)}\ny = {type(y)}")
+# print(next(y)) 
+# print(next(y))
+# print(next(y))
+
+# 172 아래와 같이 리스트의 데이터를 출력하라. 단, for문과 range문을 사용하라.
+# price_list = [32100, 32150, 32000, 32500]
+# for i, v in enumerate(price_list): print(i, v)
+
+# 173 아래와 같이 리스트의 데이터를 출력하라. 단, for문과 range문을 사용하라.
+price_list = [32100, 32150, 32000, 32500]
+for i in range(len(price_list)):
+   print(3 - i, price_list[i])
