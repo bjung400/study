@@ -1039,6 +1039,34 @@ btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되
 # for i, v in enumerate(price_list): print(i, v)
 
 # 173 아래와 같이 리스트의 데이터를 출력하라. 단, for문과 range문을 사용하라.
-price_list = [32100, 32150, 32000, 32500]
-for i in range(len(price_list)):
-   print(3 - i, price_list[i])
+# price_list = [32100, 32150, 32000, 32500]
+# for i in range(len(price_list)):
+#    print((len(price_list)-1) - i, price_list[i])
+
+# 174 아래와 같이 리스트의 데이터를 출력하라. 단, for문과 range문을 사용하라.
+# price_list = [32100, 32150, 32000, 32500]
+# for i, v in enumerate(price_list[1:]):
+#    print(str(i+10)+'0', price_list[i+1])
+
+# for i in range(1, 4):
+#    print(90+10*i, price_list[i])
+
+# 175 my_list를 아래와 같이 출력하라.
+'''
+가 나
+나 다
+다 라
+'''
+# index간에 규칙관계를 파악해야함
+# 첫번쨰 열에 index를 파악한후 
+# 같은 행의 두 데이터는 인덱스 차이가 +1라는 것을 파악 
+my_list = ["가", "나", "다", "라", ]
+for i in range(len(my_list)-1):
+   print(my_list[i], my_list[i+1])
+
+print("-----")
+
+for i in range(1, len(my_list)):
+   print(my_list[i-1], my_list[i])
+
+
