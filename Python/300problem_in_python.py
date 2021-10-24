@@ -1060,13 +1060,724 @@ btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되
 # index간에 규칙관계를 파악해야함
 # 첫번쨰 열에 index를 파악한후 
 # 같은 행의 두 데이터는 인덱스 차이가 +1라는 것을 파악 
-my_list = ["가", "나", "다", "라", ]
-for i in range(len(my_list)-1):
-   print(my_list[i], my_list[i+1])
+# my_list = ["가", "나", "다", "라", ]
+# for i in range(len(my_list)-1):
+#    print(my_list[i], my_list[i+1])
 
-print("-----")
+# print("-----")
 
-for i in range(1, len(my_list)):
-   print(my_list[i-1], my_list[i])
+# for i in range(1, len(my_list)):
+#    print(my_list[i-1], my_list[i])
+
+# 176 리스트를 아래와 같이 출력하라.
+# my_list = ["가", "나", "다", "라", "마"]
+# for i in range(len(my_list)-2):
+#   print(my_list[i], my_list[i+1], my_list[i+2])
+
+# 177 반복문과 range 함수를 사용해서 my_list를 아래와 같이 출력하라.
+# my_list = ["가", "나", "다", "라"]
+# for i in range(len(my_list)-1, 0, -1):
+#   print(my_list[i], my_list[i-1])
+
+# 178 리스트에는 네 개의 정수가 저장되어 있다. 각각의 데이터에 대해서 자신과 우측값과의 차분값을 화면에 출력하라.
+# my_list = [100, 200, 400, 800]
+# for i in range(len(my_list)-1):
+#   print(abs(my_list[i+1]-(my_list[i])))
+
+# 179 리스트에는 6일 간의 종가 데이터가 저장되어 있다. 종가 데이터의 3일 이동 평균을 계산하고 이를 화면에 출력하라.
+# my_list = [100, 200, 400, 800, 1000, 1300]
+# for i in range(len(my_list)-2):
+#   print(abs(my_list[i]+my_list[i+1]+my_list[i+2])/3)
+
+# 180 리스트에 5일간의 저가, 고가 정보가 저장돼 있다. 고가와 저가의 차를 변동폭이라고 정의할 때, low, high 두 개의 리스트를 사용해서 5일간의 변동폭을 volatility 리스트에 저장하라.
+# low_prices  = [100, 200, 400, 800, 1000]
+# high_prices = [150, 300, 430, 880, 1000]
+# volatility = []
+# for i in range(len(low_prices)):
+#   volatility.append(high_prices[i]-low_prices[i])
+# print(volatility)
+
+# 181 아래 표에서 하나의 행을 하나의 리스트로, 총 3개의 리스트를 갖는 이차원 리스트 apart를 정의하라.
+# apart = [["101호", "102호"], ["201호", "202호"],["301호", "302호"]]
+
+# 182 아래 표에서 하나의 열을 하나의 리스트로, 총 2개의 리스트를 갖는 이차원 리스트 stock을 정의하라.
+# stock = [["시가", 100, 200, 300], ["종가", 80, 210, 330]]
+# for i in stock:
+#   for j in i:
+#     print(j)
+#   print("-----")
+
+# 183 아래 표를 stock 이름의 딕셔너리로 표현하라.key로 저장하고, 나머지 같은 열의 데이터를 리스트로 저장해서 value로 저장한다.
+# stock = {"market_price":[100, 200, 300],"closing_price":[80, 210, 330]}
+# print(stock)
+
+# 184 아래 표를 stock 이라는 이름의 딕셔너리로 표현하라. 날짜를 key로 저장하고, 나머지 같은 행의 데이터를 리스트로 저장해서 value로 저장한다. 첫 열이 날짜이다.
+# stock = {"10/10":[80, 110, 70, 90],"10/11":[210,230,190,200]}
+# print(stock)
+
+# 185 리스트에 저장된 데이터를 아래와 같이 출력하라.
+# apart = [ [101, 102], [201, 202], [301, 302] ]
+# for row in apart:
+#   for col in row:
+#     print(f"{col}호")
+
+# 186 리스트에 저장된 데이터를 아래와 같이 출력하라.
+# apart = [ [101, 102], [201, 202], [301, 302] ]
+# for low in apart[::-1]:
+#   for col in low:
+#     print(f"{col}호")
+
+# 187 리스트에 저장된 데이터를 아래와 같이 출력하라.
+# apart = [ [101, 102], [201, 202], [301, 302] ]
+# for i in apart[::-1]:
+#   for j in i[::-1]:
+#     print(f"{j}호")
+
+# 188 리스트에 저장된 데이터를 아래와 같이 출력하라.
+# apart = [ [101, 102], [201, 202], [301, 302] ]
+# for row in apart:
+#   for col in row:
+#     print(f"{col}호")
+#     print('-'*5)
+
+# 189 리스트에 저장된 데이터를 아래와 같이 출력하라.
+# apart = [ [101, 102], [201, 202], [301, 302] ]
+# for row in apart:
+#   for col in row:
+#     print(f"{col}호")
+#   print('-'*5)
+
+# 190 리스트에 저장된 데이터를 아래와 같이 출력하라.
+# apart = [ [101, 102], [201, 202], [301, 302] ]
+# for row in apart:
+#   for col in row:
+#     print(f"{col}호")
+# print('-'*5)
+
+# 191 data에는 매수한 종목들의 OHLC (open/high/low/close) 가격 정보가 바인딩 되어있다.
+# data = [
+#     [ 2000,  3050,  2050,  1980],
+#     [ 7500,  2050,  2050,  1980],
+#     [15450, 15050, 15550, 14900]
+# ]
+# for row in data:
+#   for col in row:
+#     print(col*1.00014)
+
+# 192 191번의 출력 결과에 행단위로 "----" 구분자를 추가하라.
+# data = [
+#     [ 2000,  3050,  2050,  1980],
+#     [ 7500,  2050,  2050,  1980],
+#     [15450, 15050, 15550, 14900]
+# ]
+# for row in data:
+#   for col in row:
+#     print(col*1.00014)
+#   print('-'*4)
+
+# 193 192 번 문제의 결괏값을 result 이름의 리스트에 1차원 배열로 저장하라.
+# data = [
+#     [ 2000,  3050,  2050,  1980],
+#     [ 7500,  2050,  2050,  1980],
+#     [15450, 15050, 15550, 14900]
+# ]
+# result = []
+# for row in data:
+#   for col in row:
+#     result.append((col*1.00014))
+# print(result)
+
+# 194 191번 문제의 결괏값을 result 이름의 리스트에 2차원 배열로 저장하라. 저장 포맷은 아래와 같다. 각 행에 대한 데이터끼리 리스트에 저장되어야 한다.
+# data = [
+#     [ 2000,  3050,  2050,  1980],
+#     [ 7500,  2050,  2050,  1980],
+#     [15450, 15050, 15550, 14900]
+# ]
+# result = []
+# for row in data:
+#   sub = []
+#   for col in row:
+#     sub.append((col*1.00014))
+#   result.append(sub)
+# print(result)
+
+# 195 ohlc 리스트에는 시가(open), 고가 (high), 저가 (low) , 종가(close)가 날짜별로 저장돼 있다. 화면에 종가데이터를 출력하라.
+# ohlc = [["open", "high", "low", "close"],
+#         [100, 110, 70, 100],
+#         [200, 210, 180, 190],
+#         [300, 310, 300, 310]]
+# for row in ohlc[1:]:
+#   print(row[3])
+
+# 196 ohlc 리스트에는 시가(open), 고가 (high), 저가 (low) , 종가(close)가 날짜별로 저장돼 있다. 종가가 150원보다 큰경우에만 종가를 출력하라.
+# ohlc = [["open", "high", "low", "close"],
+#         [100, 110, 70, 100],
+#         [200, 210, 180, 190],
+#         [300, 310, 300, 310]]
+# for row in ohlc[1:]:
+#   if row[3] > 150: print(row[3])
+
+# 197 ohlc 리스트에는 시가(open), 고가 (high), 저가 (low) , 종가(close)가 날짜별로 저장돼 있다. 종가가 시가 보다 크거나 같은 경우에만 종가를 출력하라.
+# ohlc = [["open", "high", "low", "close"],
+#         [100, 110, 70, 100],
+#         [200, 210, 180, 190],
+#         [300, 310, 300, 310]]
+# for row in ohlc[1:]:
+#   if row[0] <= row[3]:
+#     print(row[3])
+
+# 198 ohlc 리스트에는 시가(open), 고가 (high), 저가 (low) , 종가(close)가 날짜별로 저장돼 있다. 고가와 저가의 차이를 변동폭으로 정의할 때 변동폭을 volatility 이름의 리스트에 저장하라.
+# ohlc = [["open", "high", "low", "close"],
+#         [100, 110, 70, 100],
+#         [200, 210, 180, 190],
+#         [300, 310, 300, 310]]
+# volatility = []
+# for row in ohlc[1:]:
+#   volatility.append(row[1]-row[2])
+# print(volatility)
+
+# 199 리스트에는 3일 간의 ohlc 데이터가 저장돼 있다. 종가가 시가보다 높은 날의 변동성 (고가 - 저가)을 화면에 출력하라.
+# ohlc = [["open", "high", "low", "close"],
+#         [100, 110, 70, 100],
+#         [200, 210, 180, 190],
+#         [300, 310, 300, 310]]
+# for row in ohlc[1:]:
+#   if row[3] > row[0]: print(row[1]-row[2])
+
+# 200 리스트에는 3일 간의 ohlc 데이터가 저장돼 있다. 시가에 매수해서 종가에 매도 했을 경우 총 수익금을 계산하라.
+# ohlc = [["open", "high", "low", "close"],
+#         [100, 110, 70, 100],
+#         [200, 210, 180, 190],
+#         [300, 310, 300, 310]]
+# profit = 0
+# for row in ohlc[1:]:
+#   profit += row[3]-row[0]
+# print(profit)
+
+# 09. 파이썬 함수 함수란 자주 사용하는 코드에 대한 이름표입니다. 
+# 변수가 어떤 값을 바인딩하는 것처럼 함수는 어떤 코드를 바인딩합니다.
+
+# 201 "비트코인" 문자열을 화면에 출력하는 print_coin() 함수를 정의하라.
+# def print_coin():
+#   print("비트코인")
+
+# 202 201번에서 정의한 함수를 호출하라.
+# print_coin()
+
+# 203 201번에서 정의한 print_coin 함수를 100번호출하라.
+# for i in range(100):
+#   print_coin()
+
+# 204 "비트코인" 문자열을 100번 화면에 출력하는 print_coins() 함수를 정의하라.
+# def print_coin():
+#   for i in range(100):
+#     print("비트코인")
+# print_coin()
+
+# 205 아래의 에러가 발생하는 이유에 대해 설명하라.
+# 함수 정의 전에 호출했기때문이다.
+# hello()
+# def hello():
+#     print("Hi")
+
+# 206 아래 코드의 실행 결과를 예측하라.
+# A B C A B
+# def message() :
+#     print("A")
+#     print("B")
+
+# message()
+# print("C")
+# message()
+
+# 207 아래 코드의 실행 결과를 예측하라. (읽기 어려운 코드의 예입니다.)
+# A C B
+# print("A")
+
+# def message() :
+#     print("B")
+
+# print("C")
+# message()
+
+# 208 아래 코드의 실행 결과를 예측하라. (읽기 어려운 코드의 예입니다.)
+# A C B E D
+# print("A")
+# def message1() :
+#     print("B")
+# print("C")
+# def message2() :
+#     print("D")
+# message1()
+# print("E")
+# message2()
+
+# 209 아래 코드의 실행 결과를 예측하라.
+# B A
+# def message1():
+#     print("A")
+
+# def message2():
+#     print("B")
+#     message1()
+
+# message2()
+
+# 210 아래 코드의 실행 결과를 예측하라.
+# B C B C B C A
+# def message1():
+#     print("A")
+
+# def message2():
+#     print("B")
+
+# def message3():
+#     for i in range (3) :
+#         message2()
+#         print("C")
+#     message1()
+
+# message3()
+
+# 211 함수의 호출 결과를 예측하라.
+# 안녕 Hi
+# def 함수(문자열) :
+#     print(문자열)
+
+# 함수("안녕")
+# 함수("Hi")
+
+# 212 함수의 호출 결과를 예측하라.
+# 7 15
+# def 함수(a, b) :
+#     print(a + b)
+
+# 함수(3, 4)
+# 함수(7, 8)
+
+# 213 아래와 같은 에러가 발생하는 원인을 설명하라.
+# 함수의 정의와 다르게 호출하고있다.
+# 함수를 호출할때 하나의 파라미터를 입력해야한다.
+# def 함수(문자열) :
+#     print(문자열)
+# 함수()
+
+# 214 아래와 같은 에러가 발생하는 원인을 설명하라.
+# 두개의 값을 입력받아 덧셈연산을 하려는 의도로 설계된 함수인데
+# 호출할때 문자열과 숫자를 입력해서 서로 더할수 없다는 에러가 발생합니다.
+# def 함수(a, b) :
+#     print(a + b)
+
+# 함수("안녕", 3)
+
+# 215 하나의 문자를 입력받아 문자열 끝에 ":D" 스마일 문자열을 이어 붙여 출력하는 print_with_smile 함수를 정의하라.
+# def print_with_smile(s):
+#   print(s+":D")
+
+# 216 215에서 정의한 함수를 호출하라. 파라미터는 "안녕하세요"로 입력하라.
+# print_with_smile("안녕하세요")
+
+# 217 현재 가격을 입력 받아 상한가 (30%)를 출력하는 print_upper_price 함수를 정의하라.
+# def print_upper_price(price):
+#   print(price*1.3)
+
+# 218 두 개의 숫자를 입력받아 두 수의 합을 출력하는 print_sum 함수를 정의하라.
+# def print_sum(a, b):
+#   print(a+b)
+
+# 219 두 개의 숫자를 입력받아 합/차/곱/나눗셈을 출력하는 print_arithmetic_operation 함수를 작성하라.
+# def print_arithmetic_operation(a, b):
+#   print(f"{a} + {b} = {a+b}")
+#   print(f"{a} - {b} = {a-b}")
+#   print(f"{a} * {b} = {a*b}")
+#   print(f"{a} / {b} = {a/b}")
+
+# print_arithmetic_operation(3, 4)
+
+# 220 세 개의 숫자를 입력받아 가장 큰수를 출력하는 print_max 함수를 정의하라. 단 if 문을 사용해서 수를 비교하라.
+# def print_max(a, b, c):
+#   max_val = 0
+#   if a > max_val:
+#     max_val = a
+#   if b > max_val:
+#     max_val = b
+#   if c > max_val:
+#     max_val = c
+#   print(max_val)
+
+# print_max(1,2,3)
+
+# 221 입력된 문자열을 역순으로 출력하는 print_reverse 함수를 정의하라.
+# def print_reverse(string):
+#   print(string[::-1])
+# print_reverse("python")
+    
+# 222 성적 리스트를 입력 받아 평균을 출력하는 print_score 함수를 정의하라.
+# def print_score(score_list):
+#   print(sum(score_list)/len(score_list))
+# print_score([1,2,3])
+
+# 223 하나의 리스트를 입력받아 짝수만 화면에 출력하는 print_even 함수를 정의하라.
+# def print_even(l):
+#   for i in l:
+#     if i % 2 == 0: print(i)
+# print_even ([1, 3, 2, 10, 12, 11, 15])
+
+# 224 하나의 딕셔너리를 입력받아 딕셔너리의 key 값을 화면에 출력하는 print_keys 함수를 정의하라.
+# def print_keys(dic):
+#   for i in dic.keys(): print(i)
+# print_keys({"이름":"김말똥", "나이":30, "성별":0})
+
+# 225 my_dict에는 날짜를 키값으로 OHLC가 리스트로 저장돼 있다.
+# my_dict = {"10/26" : [100, 130, 100, 100],
+#            "10/27" : [10, 12, 10, 11]}
+# my_dict와 날짜 키값을 입력받아 OHLC 리스트를 출력하는 print_value_by_key 함수를 정의하라.
+# def print_value_by_key(dict, key):
+#   print(dict[key])
+  
+# print_value_by_key(my_dict, "10/26")
+
+# 226 입력 문자열을 한 줄에 다섯글자씩 출력하는 print_5xn(string) 함수를 작성하라.
+# def print_5xn(str):
+#   length = 5
+#   print([str[i:i+length]for i in range(0, len(str), length)])
+
+# def print_5xn(str):
+#   for i in range(0, len(str), 5):
+#     print(str[i:i+5])
+
+# def print_5xn(line):
+#   chunk_num = int(len(line) / 5)
+#   for i in range(chunk_num):
+#     print(line[i*5:i*5+5])
+# print_5xn("아이엠어보이유알어걸")
+
+# 227 문자열과 한줄에 출력될 글자 수를 입력을 받아 한 줄에 입력된 글자 수만큼 출력하는 print_mxn(string) 함수를 작성하라.
+# def print_mxn(str,length):
+#   chunk_num = int(len(str)/length)
+#   for i in range(chunk_num+1):
+#     print(str[i*length:i*length+length])
+# print_mxn("아이엠어보이유알어걸", 3)
+
+# 228 연봉을 입력받아 월급을 계산하는 calc_monthly_salary(annual_salary) 함수를 정의하라. 회사는 연봉을 12개월로 나누어 분할 지급하며, 이 때 1원 미만은 버림한다.
+# def calc_monthly_salary(annual_salary):
+#   monthly_pay = int(annual_salary / 12)
+#   return monthly_pay
+
+# print(calc_monthly_salary(12000000))
+
+# 229 아래 코드의 실행 결과를 예측하라.
+# 왼쪽: 100, 오른쪽: 200
+# def my_print (a, b) :
+#     print("왼쪽:", a)
+#     print("오른쪽:", b)
+
+# my_print(a=100, b=200)
+
+# 230 아래 코드의 실행 결과를 예측하라.
+# 왼쪽: 200, 오른쪽: 100
+# def my_print (a, b) :
+#     print("왼쪽:", a)
+#     print("오른쪽:", b)
+
+# my_print(b=100, a=200)
+
+# 231 아래 코드를 실행한 결과를 예상하라.
+# name result is not defined
+# def n_plus_1 (n) :
+#     result = n + 1
+
+# n_plus_1(3)
+# print (result)
+
+# 232 문자열 하나를 입력받아 인터넷 주소를 반환하는 make_url 함수를 정의하라.
+# def make_url(address):
+#   return(f"www.{address}.com")
+# print(make_url("naver"))
+
+# 233 문자열을 입력받아 각 문자들로 구성된 리스트로 반환하는 make_list 함수를 정의하라.
+# def make_list(str):
+#   return [i for i in str]
+# def make_list(str):
+#   return list(str)
+# print(make_list("abcd"))
+
+# 234 숫자로 구성된 하나의 리스트를 입력받아, 
+# 짝수들을 추출하여 리스트로 반환하는 pickup_even 함수를 구현하라.
+# def pickup_even(l):
+#   return [i for i in l if i % 2 == 0]
+# print(pickup_even([3, 4, 5, 6, 7, 8]))
+
+# 235 콤마가 포함된 문자열 숫자를 입력받아 정수로 
+# 변환하는 convert_int 함수를 정의하라.
+# def convert_int(str):
+#   return int(str.replace(',', ''))
+# print(convert_int("1,234,567"))
+
+# 236 아래 코드의 실행 결과를 예측하라.
+# 22
+# def 함수(num) :
+#     return num + 4
+
+# a = 함수(10)
+# b = 함수(a)
+# c = 함수(b)
+# print(c)
+
+# 237 아래 코드의 실행 결과를 예측하라.
+# 22
+# def 함수(num) :
+#     return num + 4
+
+# c = 함수(함수(함수(10)))
+# print(c)
+
+# 238 아래 코드의 실행 결과를 예측하라.
+# 140
+# def 함수1(num) :
+#     return num + 4
+
+# def 함수2(num) :
+#     return num * 10
+
+# a = 함수1(10)
+# c = 함수2(a)
+# print(c)
+
+# 239 아래 코드의 실행 결과를 예측하라.
+# 16
+# def 함수1(num) :
+#     return num + 4
+
+# def 함수2(num) :
+#     num = num + 2
+#     return 함수1(num)
+
+# c = 함수2(10)
+# print(c)
+
+# 240 아래 코드의 실행 결과를 예측하라.
+# 28
+# def 함수0(num) :
+#     return num * 2
+
+# def 함수1(num) :
+#     return 함수0(num + 2)
+
+# def 함수2(num) :
+#     num = num + 10
+#     return 함수1(num)
+
+# c = 함수2(2)
+# print(c)
+
+# 10. 파이썬 모듈 파이썬 모듈은 파이썬 파일을 의미합니다. 파이썬은 다양한 분야별로 모듈을 제공합니다. 프로그램 구현에 필요한 모듈의 기초 사용법을 알아봅시다.
+
+# 241 현재시간 datetime 모듈을 사용해서 현재 시간을 화면에 출력해보세요.
+# import datetime
+# print(datetime.datetime.now())
+
+# 242 현재시간의 타입 datetime 모듈의 now 함수의 리턴 값의 타입을 화면에 출력해보세요.
+# import datetime
+# now = datetime.datetime.now()
+# print(now, type(now))
+
+# 243 timedelta datetime 모듈의 timedelta를 사용해서 
+# 오늘로부터 5일, 4일, 3일, 2일, 1일 전의 날짜를 화면에 출력해보세요.
+# import datetime 
+# today = datetime.date.today()
+# for i in range(5, 0, -1):
+#   delta = datetime.timedelta(days=i)
+#   print(f"{i}일 전 날짜는 : {today - delta}")
+
+# 244 strftime 현재시간을 얻어온 후 다음과 같은 포맷으로 시간을 출력해보세요. strftime 메서드를 사용하세요.
+# import datetime
+
+# now = datetime.datetime.now()
+# print(now.strftime('%H:%M:%S'))
+
+# 245 strptime datetime.datetime.strptime 메서드를 사용하면 문자열 형식의 시간을 datetime.datetime 타입의 시간 값으로 만들어줍니다. "2020-05-04"의 문자열을 시간 타입으로 변환해보세요.
+# import datetime
+# day = "2020-05-04 11:11:11"
+# ret = datetime.datetime.strptime(day, '%Y-%m-%d %H:%M:%S')
+# print(ret, type(ret))
+
+# 246 sleep 함수 time 모듈, datetime 모듈을 사용해서 1초에 한 번 현재 시간을 출력하는 코드를 작성하세요.
+# import time, datetime
+
+# while True:
+#   now = datetime.datetime.now()
+#   print(now.strftime('%H:%M:%S'))
+#   time.sleep(1)
+
+# 247 모듈 임포트 모듈을 임포트하는 4가지 방식에 대해 설명해보세요.
+# import os # A module import
+# from os import listdir # from B import A
+# from A import * # bring everything from A (이방법은 충돌이 발생할수있음)
+# import backtrader as bt # bacltrader module을 bt라는 이름으로 사용하겠음
+
+# 248 os 모듈 os 모듈의 getcwd 함수를 호출하여 현재 디렉터리의 경로를 화면에 출력해보세요.
+# import os
+# ret = os.getcwd()
+# print(ret, type(ret))
+
+# 249 rename 함수 바탕화면에 텍스트 파일을 하나 생성한 후 os 모듈의 rename 함수를 호출하여 해당 파일의 이름을 변경해보세요.
+# import os
+# os.rename('t', "test")
+
+# 250 numpy 모듈의 arange 함수를 사용해서 0.0 부터 5.0까지 0.1씩 증가하는 값을 화면에 출력해보세요.
+# import numpy
+# for i in numpy.arange(0, 5, 0.1):
+#   print(float(i))
+
+# 11. 파이썬 클래스 파이썬 클래스는 타입을 만들어내는 도구입니다. 
+# int, float, str과 같이 여러분의 새로운 타입을 만들 수 있습니다.
+
+# 251 클래스, 객체, 인스턴스에 대해 설명해봅시다.
+# Class : 똑같은 무엇인가를 계속 만들어 낼수있는 설계, 틀 (설계도)
+# Method : 클래스 내부에 저의된 함수
+# Object : 실제로 만들어진 자동차
+
+# Instance : 클래스의 의해서 만들어진 객체 
+# 어떤 클래스의 객체인지를 관계위주로 설명할때 사용
+
+# 252 비어있는 사람 (Human) 클래스를 "정의" 해보세요.
+# class Human():
+#   pass
+
+# 253 인스턴스 생성 사람 (Human) 클래스의 인스턴스를 "생성" 하고 이를 areum 변수로 바인딩해보세요.
+# class Human():
+#   pass
+
+# areum = Human()
+
+# 254 사람 (Human) 클래스에 "응애응애"를 출력하는 생성자를 추가하세요.
+# class Human():
+#   def __init__(self):
+#     print("응애응애")
+
+# areum = Human()
+
+# 255 사람 (Human) 클래스에 (이름, 나이, 성별)을 받는 생성자를 추가하세요.
+# class Human():
+#   def __init__(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+    
+# areum = Human("아름", 25, "여자")
+# print(areum.name)
+
+# 256 255에서 생성한 인스턴스의 이름, 나이, 성별을 출력하세요. 
+# 인스턴스 변수에 접근하여 값을 출력하면 됩니다.
+# class Human():
+#   def __init__(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+    
+# areum = Human("아름", 25, "여자")
+# print(f"이름 : {areum.name}, 나이 : {areum.age}, 성별 : {areum.sex}")
+
+# 257 사람 (Human) 클래스에서 이름, 나이, 성별을 출력하는 who() 메소드를 추가하세요.
+# class Human():
+#   def __init__(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+
+#   def who(self):
+#     print(f"이름 : {self.name}, 나이 : {self.age}, 성별 : {self.sex}")
+
+# areum = Human("종열", 26, "남자")
+# areum.who()
+
+# 258 사람 (Human) 클래스에 (이름, 나이, 성별)을 받는 setInfo 메소드를 추가하세요.
+# class Human():
+#   def __init__(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+
+#   def who(self):
+#     print(f"이름 : {self.name}, 나이 : {self.age}, 성별 : {self.sex}")
+
+#   def setInfo(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+
+# areum = Human("모름", 0, "모름")
+# areum.who()
+
+# areum.setInfo("아름", 25, "여자")
+# areum.who()
+
+# 259 사람 (human) 클래스에 "나의 죽음을 알리지 말라"를 출력하는 소멸자를 추가하세요.
+# class Human():
+#   def __init__(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+
+#   def __del__(self):
+#     print("나의 죽음을 알리지 말라")
+  
+#   def who(self):
+#     print(f"이름 : {self.name}, 나이 : {self.age}, 성별 : {self.sex}")
+
+#   def setInfo(self, name, age, sex):
+#     self.name = name
+#     self.age = age
+#     self.sex = sex
+
+
+# areum = Human("아름", 25, "여자")
+# del areum
+
+# 260 아래와 같은 에러가 발생한 원인에 대해 설명하세요.
+# # print() 함수는 0의 인수를 취하지만 1이 주어졌습니다.
+# class OMG: 
+#   def print(): # def print(self):
+#     print("Oh my god")
+
+# mystock = OMG()
+# mystock.print()
+# 클래스 객체를 생성할 때 만들어진 객체가
+# 메서드를 호출 할 때 객체 자기 자신이 인자로 들어가기 때문입니다.
+# 그래서 첫 번째 인자인 self가 들어가지 않으면 에러가 난다.
+
+# 261 주식 종목에 대한 정보를 저장하는 Stock 클래스를 정의해보세요. 클래스는 속성과 메서드를 갖고 있지 않습니다.
+# class Stock:
+#   pass
+
+# 262 Stock 클래스의 객체가 생성될 때 종목명과 종목코드를 입력 받을 수 있도록 생성자를 정의해보세요.
+# class Stock:
+#   def __init__(self, name, code):
+#       self.name = name
+#       self.code = code
+
+# 삼성 = Stock("삼성전자", "005930")
+# print(삼성.name)
+# print(삼성.code)
+
+# 263 객체에 종목명을 입력할 수 있는 set_name 메서드를 추가해보세요.
+class Stock:
+  def __init__(self, name, code):
+    self.name = name
+    self.code = code
+  
+  def set_name(self, name):
+    self.name = name
+
+삼성 = Stock("none", "005930")
+print(삼성.name)
+
+삼성.set_name("삼성전자")
+print(삼성.name)
+
+
+
+
 
 
