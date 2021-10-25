@@ -1762,22 +1762,164 @@ btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되
 # print(삼성.code)
 
 # 263 객체에 종목명을 입력할 수 있는 set_name 메서드를 추가해보세요.
-class Stock:
-  def __init__(self, name, code):
-    self.name = name
-    self.code = code
+# class Stock:
+#   def __init__(self, name, code):
+#     self.name = name
+#     self.code = code
   
-  def set_name(self, name):
+#   def set_name(self, name):
+#     self.name = name
+
+# 삼성 = Stock("none", "005930")
+# print(삼성.name)
+
+# 삼성.set_name("삼성전자")
+# print(삼성.name)
+
+
+# 264 객체에 종목코드를 입력할 수 있는 set_code 메서드를 추가해보세요.
+# class Stock:
+#   def __init__(self, name, code):
+#     self.name = name
+#     self.code = code
+  
+#   def set_name(self, name):
+#     self.name = name
+
+#   def set_code(self, code):
+#     self.code = code
+
+# a = Stock("None", "None")
+# print(a.code)
+
+# a.set_code("005930")
+# print(a.code)
+
+# 265 종목명과 종목코드를 리턴하는 get_name, get_code 메서드를 추가하세요. 
+# 해당 메서드를 사용하여 종목명과 종목코드를 얻고 이를 출력해보세요.
+# class Stock:
+#   def __init__(self, name, code):
+#     self.name = name
+#     self.code = code
+  
+#   def set_name(self, name):
+#     self.name = name
+
+#   def set_code(self, code):
+#     self.code = code
+
+#   def get_name(self):
+#     return self.name
+
+#   def get_code(self):
+#     return self.code
+
+# 삼성 = Stock("삼성전자", "005930")
+# print(삼성.name)
+# print(삼성.code)
+# print(삼성.get_name())
+# print(삼성.get_code())
+
+# 266 생성자에서 종목명, 종목코드, PER, PBR, 배당수익률을 입력 받을 수 있도록 생성자를 수정하세요. PER, PBR, 배당수익률은 float 타입입니다.
+# class Stock:
+#   def __init__(self, name, code, per, pbr, dividend_yield):
+#     self.name = name
+#     self.code = code
+#     self.per = per
+#     self.pbr = pbr
+#     self.dividend_yield = dividend_yield
+  
+# samsung = Stock("삼성전자", "005930", 15.79, 1.33, 2.83)
+# print(samsung.dividend_yield)
+
+# 268 PER, PBR, 배당수익률은 변경될 수 있는 값입니다. 
+# 이 값을 변경할 때 사용하는 set_per, set_pbr, set_dividend 메서드를 추가하세요.
+# class Stock:
+#   def __init__(self, name, code, per, pbr, dividend_yield):
+#     self.name = name
+#     self.code = code
+#     self.per = per
+#     self.pbr = pbr
+#     self.dividend_yield = dividend_yield
+  
+#   def set_per(self, per):
+#     self.per = per
+
+#   def set_pbr(self, pbr):
+#     self.pbr = pbr
+
+#   def set_dividend(self, dividend):
+#     self.dividend = dividend
+
+# samsung = Stock("삼성전자", "005930", 15.79, 1.33, 2.83)
+# samsung.set_per(12.75)
+# print(samsung.per)
+
+# 270 아래의 표를 참조하여 3종목에 대해 객체를 생성하고 이를 파이썬 리스트에 저장하세요. 파이썬 리스트에 저장된 각 종목에 대해 for 루프를 통해 종목코드와 PER을 출력해보세요.
+# class Stock:
+#   def __init__(self, name, code, per, pbr, dividend_yield):
+#     self.name = name
+#     self.code = code
+#     self.per = per
+#     self.pbr = pbr
+#     self.dividend_yield = dividend_yield
+  
+# samsung = Stock("삼성전자", "005930", 15.79, 1.33, 2.83)
+# 현대차 = Stock("현대차", "005380", 8.70, 0.35, 4.27)
+# LG = Stock("LG전자", "066570", 317.34, 0.69, 1.37)
+
+# 종목 = []
+# 종목.append(samsung)
+# 종목.append(현대차)
+# 종목.append(LG)
+
+# for i in 종목:
+#   print(f"Name : {i.name}, Code : {i.code}, PER : {i.per}")
+
+# 271 Account 클래스
+# 은행에 가서 계좌를 개설하면 은행이름, 예금주, 계좌번호, 잔액이 설정됩니다.
+# Account 클래스를 생성한 후 생성자를 구현해보세요. 생성자에서는 예금주와 초기 잔액만 입력 받습니다. 은행이름은 SC은행으로 계좌번호는 3자리-2자리-6자리 형태로 랜덤하게 생성됩니다.
+# import random
+# class Account:
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+
+# jong = Account("이종열", 100)
+# print(jong.name, jong.bank, jong.account_number)
+
+
+
+import random
+class Account:
+  # class variable
+  account_count = 0
+
+  def __init__(self, name, balance):
     self.name = name
+    self.balance = balance
+    self.bank = "SC은행"
+    num1 = random.randint(0, 999)
+    num2 = random.randint(0, 99)
+    num3 = random.randint(0, 999999)
 
-삼성 = Stock("none", "005930")
-print(삼성.name)
+    # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+    num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+    num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+    num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+    self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+    
+    Account.account_count += 1
 
-삼성.set_name("삼성전자")
-print(삼성.name)
-
-
-
-
-
-
+jong = Account("이종열", 100)
+print(Account.account_count)
