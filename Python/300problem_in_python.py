@@ -330,26 +330,26 @@
 # nums = [1, 2, 3, 4, 5]
 # print(nums[::-1])
 
-# 065 interest 리스트에는 아래의 데이터가 바인딩되어 있다.
-# interest = ['삼성전자', 'LG전자', 'Naver']
-# print(interest[0], interest[2])
+# 065 deposit_count 리스트에는 아래의 데이터가 바인딩되어 있다.
+# deposit_count = ['삼성전자', 'LG전자', 'Naver']
+# print(deposit_count[0], deposit_count[2])
 
 # 066 join 메서드
-# interest = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
-# print(' '.join(interest))
+# deposit_count = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
+# print(' '.join(deposit_count))
 
 # 067 join 메서드
-# interest = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
-# print('/'.join(interest))
+# deposit_count = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
+# print('/'.join(deposit_count))
 
 # 068 join 메서드
-# interest = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
-# print('\n'.join(interest))
+# deposit_count = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
+# print('\n'.join(deposit_count))
 
 # 069 문자열 split 메서드
 # string = "삼성전자/LG전자/Naver"
-# interest = string.split('/')
-# print(interest)
+# deposit_count = string.split('/')
+# print(deposit_count)
 
 # 070 리스트 정렬
 # data = [2, 4, 3, 1, 5, 10, 9]
@@ -397,12 +397,12 @@
 # print(t)
 
 # 077 다음 튜플을 리스트로 변환하라.
-# interest = ('삼성전자', 'LG전자', 'SK Hynix')
-# print(list(interest))
+# deposit_count = ('삼성전자', 'LG전자', 'SK Hynix')
+# print(list(deposit_count))
 
 # 078 다음 리스트를 튜플로 변경하라.
-# interest = ['삼성전자', 'LG전자', 'SK Hynix']
-# print(tuple(interest))
+# deposit_count = ['삼성전자', 'LG전자', 'SK Hynix']
+# print(tuple(deposit_count))
 
 # 079 튜플 언팩킹
 # temp = ('apple', 'banana', 'cake')
@@ -1899,16 +1899,302 @@ btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되
 # print(jong.name, jong.bank, jong.account_number)
 
 
+# 272 클래스 변수를 사용해서 Account 클래스로부터 생성된 계좌 객체의 개수를 저장하세요.
+# import random
+# class Account:
+#   # class variable
+#   account_count = 0
 
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+    
+#     Account.account_count += 1
+
+# jong = Account("이종열", 100)
+# print(Account.account_count)
+
+# 273 Account 클래스로부터 생성된 계좌의 개수를 출력하는 get_account_num() 메서드를 추가하세요.
+# import random
+
+# class Account:
+#   # class variable
+#   account_count = 0
+
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
+  
+#   def get_account_num(cls):
+#     print(cls.account_count)
+
+# jong = Account("이종열", 100)
+# lee = Account("이민수", 100)
+# lee2 = Account("이태훈", 1000)
+# jong.get_account_num()
+
+# 274 Account 클래스에 입금을 위한 deposit 메서드를 추가하세요. 입금은 최소 1원 이상만 가능합니다.
+# import random
+
+# class Account:
+#   # class variable
+#   account_count = 0
+
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
+  
+#   def get_account_num(cls):
+#     print(cls.account_count)
+
+#   def deposit(self, money):
+#     self.balance += money
+    
+# jong = Account("이종열", 100)
+# lee = Account("이태훈", 1000)
+# print(lee.balance)
+# lee.deposit(100)
+# print(lee.balance)
+
+# 274 Account 클래스에 입금을 위한 deposit 메서드를 추가하세요. 입금은 최소 1원 이상만 가능합니다.
+# import random
+
+# class Account:
+#   # class variable
+#   account_count = 0
+
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
+  
+#   def get_account_num(cls):
+#     print(cls.account_count)
+
+#   def deposit(self, money):
+#     if money >= 1: self.balance += money
+
+#   def withdraw(self, money):
+#     if money >= 1: self.balance -= money
+
+# jong = Account("이종열", 100)
+# lee = Account("이태훈", 1000)
+# lee.withdraw(900)
+# lee.deposit(100)
+# print(lee.balance)
+
+
+# 276 Account 인스턴스에 저장된 정보를 출력하는 display_info() 메서드를 추가하세요. 잔고는 세자리마다 쉼표를 출력하세요.
+# import random
+# class Account:
+#   # class variable
+#   account_count = 0
+
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
+  
+#   def get_account_num(cls):
+#     print(cls.account_count)
+
+#   def deposit(self, money):
+#     if money >= 1: self.balance += money
+
+#   def withdraw(self, money):
+#     if money >= 1: self.balance -= money
+
+#   def display_info(self):
+#     print(f"은행이름 : {self.bank}")
+#     print(f"예금주 : {self.name}")
+#     print(f"계좌번호 : {self.account_number}")
+#     print(f"잔고 : {self.balance}")
+
+# jong = Account("이종열", 100)
+# lee = Account("이태훈", 1000)
+# lee.withdraw(100)
+# lee.display_info()
+
+# 277 입금 횟수가 5회가 될 때 잔고를 기준으로 1%의 이자가 잔고에 추가되도록 코드를 변경해보세요.
+# import random
+# class Account:
+#   # class variable
+#   account_count = 0
+#   deposit_count = 0
+
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
+  
+#   def get_account_num(cls):
+#     print(cls.account_count)
+
+#   def deposit(self, money):
+#     if money >= 1:
+#       self.balance += money
+#       self.deposit_count += 1
+#     if self.deposit_count % 5 == 0:         # 5, 10, 15
+#       self.balance = (self.balance * 1.01)
+
+#   def withdraw(self, money):
+#     if money >= 1: self.balance -= money
+
+#   def display_info(self):
+#     print(f"은행이름 : {self.bank}")
+#     print(f"예금주 : {self.name}")
+#     print(f"계좌번호 : {self.account_number}")
+#     print(f"잔고 : {self.balance}")
+
+# jong = Account("이종열", 100)
+# lee = Account("이태훈", 100)
+# for i in range(100):lee.deposit(100)
+# print(lee.deposit_count)
+# lee.display_info()
+
+# 278 Account 클래스로부터 3개 이상 인스턴스를 생성하고 생성된 인스턴스를 리스트에 저장해보세요.
+# import random
+# class Account:
+#   # class variable
+#   account_count = 0
+#   deposit_count = 0
+
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
+
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
+
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
+  
+#   def get_account_num(cls):
+#     print(cls.account_count)
+
+#   def deposit(self, money):
+#     if money >= 1:
+#       self.balance += money
+#       self.deposit_count += 1
+#     if self.deposit_count % 5 == 0:         # 5, 10, 15
+#       self.balance = (self.balance * 1.01)
+
+#   def withdraw(self, money):
+#     if money >= 1: self.balance -= money
+
+#   def display_info(self):
+#     print(f"은행이름 : {self.bank}")
+#     print(f"예금주 : {self.name}")
+#     print(f"계좌번호 : {self.account_number}")
+#     print(f"잔고 : {self.balance}")
+
+# jong = Account("이종열", 100)
+# lee = Account("이태훈", 100)
+# byung = Account("정병욱", 1000)
+
+# l = []
+# l.append(jong)
+# l.append(lee)
+# l.append(byung)
+# for i in l:
+#   if i.balance >= 1000:
+#     i.display_info()
+
+# 280 입금과 출금 내역이 기록되도록 코드를 업데이트 하세요. 
+# 입금 내역과 출금 내역을 출력하는 deposit_history와 withdraw_history 메서드를 추가하세요.
 import random
 class Account:
   # class variable
   account_count = 0
+  deposit_count = 0
+  d_history = []
+  w_history = []
 
   def __init__(self, name, balance):
     self.name = name
     self.balance = balance
     self.bank = "SC은행"
+
+    # 3-2-6
     num1 = random.randint(0, 999)
     num2 = random.randint(0, 99)
     num3 = random.randint(0, 999999)
@@ -1918,8 +2204,42 @@ class Account:
     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
-    
     Account.account_count += 1
+  
+  def get_account_num(cls):
+    print(cls.account_count)
+
+  def deposit(self, money):
+    if money >= 1:
+      self.balance += money
+      self.deposit_count += 1
+      self.d_history.append(money)
+    if self.deposit_count % 5 == 0:         # 5, 10, 15
+      self.balance = (self.balance * 1.01)
+
+  def withdraw(self, money):
+    if money >= 1: 
+      self.balance -= money
+      self.w_history.append(money)
+
+  def display_info(self):
+    print(f"은행이름 : {self.bank}")
+    print(f"예금주 : {self.name}")
+    print(f"계좌번호 : {self.account_number}")
+    print(f"잔고 : {self.balance}")
+  
+  def deposit_history(self):
+    print(self.d_history)
+
+  def withdraw_history(self):
+    print(self.w_history)
 
 jong = Account("이종열", 100)
-print(Account.account_count)
+lee = Account("이태훈", 100)
+byung = Account("정병욱", 1000)
+jong.deposit(100)
+jong.deposit(200)
+jong.deposit_history()
+
+jong.withdraw(200)
+jong.withdraw_history()
