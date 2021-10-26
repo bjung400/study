@@ -2181,65 +2181,224 @@ btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되
 
 # 280 입금과 출금 내역이 기록되도록 코드를 업데이트 하세요. 
 # 입금 내역과 출금 내역을 출력하는 deposit_history와 withdraw_history 메서드를 추가하세요.
-import random
-class Account:
-  # class variable
-  account_count = 0
-  deposit_count = 0
-  d_history = []
-  w_history = []
+# import random
+# class Account:
+#   # class variable
+#   account_count = 0
+#   deposit_count = 0
+#   d_history = []
+#   w_history = []
 
-  def __init__(self, name, balance):
-    self.name = name
-    self.balance = balance
-    self.bank = "SC은행"
+#   def __init__(self, name, balance):
+#     self.name = name
+#     self.balance = balance
+#     self.bank = "SC은행"
 
-    # 3-2-6
-    num1 = random.randint(0, 999)
-    num2 = random.randint(0, 99)
-    num3 = random.randint(0, 999999)
+#     # 3-2-6
+#     num1 = random.randint(0, 999)
+#     num2 = random.randint(0, 99)
+#     num3 = random.randint(0, 999999)
 
-    # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
-    num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
-    num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
-    num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
-    self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
-    Account.account_count += 1
+#     # zfill 문자열이 특정길이가 되도록 문자열 앞에 0을 채워주는 함수
+#     num1 = str(num1).zfill(2)      # 1 -> '1' -> '001'
+#     num2 = str(num2).zfill(2)      # 1 -> '1' -> '01'
+#     num3 = str(num3).zfill(6)      # 1 -> '1' -> '0000001'
+#     self.account_number = num1 + '-' + num2 + '-' + num3  # 001-01-000001
+#     Account.account_count += 1
   
-  def get_account_num(cls):
-    print(cls.account_count)
+#   def get_account_num(cls):
+#     print(cls.account_count)
 
-  def deposit(self, money):
-    if money >= 1:
-      self.balance += money
-      self.deposit_count += 1
-      self.d_history.append(money)
-    if self.deposit_count % 5 == 0:         # 5, 10, 15
-      self.balance = (self.balance * 1.01)
+#   def deposit(self, money):
+#     if money >= 1:
+#       self.balance += money
+#       self.deposit_count += 1
+#       self.d_history.append(money)
+#     if self.deposit_count % 5 == 0:         # 5, 10, 15
+#       self.balance = (self.balance * 1.01)
 
-  def withdraw(self, money):
-    if money >= 1: 
-      self.balance -= money
-      self.w_history.append(money)
+#   def withdraw(self, money):
+#     if money >= 1: 
+#       self.balance -= money
+#       self.w_history.append(money)
 
-  def display_info(self):
-    print(f"은행이름 : {self.bank}")
-    print(f"예금주 : {self.name}")
-    print(f"계좌번호 : {self.account_number}")
-    print(f"잔고 : {self.balance}")
+#   def display_info(self):
+#     print(f"은행이름 : {self.bank}")
+#     print(f"예금주 : {self.name}")
+#     print(f"계좌번호 : {self.account_number}")
+#     print(f"잔고 : {self.balance}")
   
-  def deposit_history(self):
-    print(self.d_history)
+#   def deposit_history(self):
+#     print(self.d_history)
 
-  def withdraw_history(self):
-    print(self.w_history)
+#   def withdraw_history(self):
+#     print(self.w_history)
 
-jong = Account("이종열", 100)
-lee = Account("이태훈", 100)
-byung = Account("정병욱", 1000)
-jong.deposit(100)
-jong.deposit(200)
-jong.deposit_history()
+# jong = Account("이종열", 100)
+# lee = Account("이태훈", 100)
+# byung = Account("정병욱", 1000)
+# jong.deposit(100)
+# jong.deposit(200)
+# jong.deposit_history()
 
-jong.withdraw(200)
-jong.withdraw_history()
+# jong.withdraw(200)
+# jong.withdraw_history()
+
+# 281 다음 코드가 동작하도록 차 클래스를 정의하세요.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+# car = 차(2, 1000)
+# print(car.바퀴)
+# print(car.가격)
+
+# 282 차 클래스를 상속받은 자전차 클래스를 정의하세요.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+# class 자전차(차):
+#   pass
+
+# 283 다음 코드가 동작하도록 자전차 클래스를 정의하세요. 단 자전차 클래스는 차 클래스를 상속받습니다.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+# class 자전차(차):
+#   pass
+
+# bicycle = 자전차(2, 100)
+# print(bicycle.가격)
+
+# 284 클래스 상속 다음 코드가 동작하도록 자전차 클래스를 정의하세요. 
+# 단 자전차 클래스는 차 클래스를 상속받습니다.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+# class 자전차(차):
+#   def __init__(self, 바퀴, 가격, 구동계):
+#       super().__init__(바퀴, 가격)
+#       self.구동계 = 구동계
+      
+
+# bicycle = 자전차(2, 100, "시마노")
+# print(bicycle.구동계)
+
+# 285 다음 코드가 동작하도록 차 클래스를 상속받는 자동차 클래스를 정의하세요.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+# class 자동차(차):
+#   def __init__(self, 바퀴, 가격):
+#       super().__init__(바퀴, 가격)
+  
+#   def 정보(self):
+#     print(f"바퀴수 : {self.바퀴}")
+#     print(f"가격 : {self.가격}")
+
+# car = 자동차(4, 1000)
+# car.정보()
+
+# 286 부모 클래스 생성자 호출 다음 코드가 동작하도록 자전차 클래스를 수정하세요.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+#   def 정보(self):
+#     print(f"바퀴수 : {self.바퀴}")
+#     print(f"가격 : {self.가격}")
+
+# class 자전차(차):
+#   def __init__(self, 바퀴, 가격, 구동계):
+#       super().__init__(바퀴, 가격)
+#       self.구동계 = 구동계
+
+# class 자동차(차):
+#   def __init__(self, 바퀴, 가격):
+#       super().__init__(바퀴, 가격)
+
+# bicycle = 자전차(2, 100, "시마노")
+# 아우디 = 자동차(4, 5000)
+# 아우디.정보()
+# bicycle.정보()
+
+# 287 부모 클래스 메서드 호출
+# 자전차의 정보() 메서드로 구동계 정보까지 출력하도록 수정해보세요.
+# class 차:
+#   def __init__(self, 바퀴, 가격):
+#     self.바퀴 = 바퀴
+#     self.가격 = 가격
+
+#   def 정보(self):
+#     print(f"바퀴수 : {self.바퀴}")
+#     print(f"가격 : {self.가격}")
+
+# class 자전차(차):
+#   def __init__(self, 바퀴, 가격, 구동계):
+#       super().__init__(바퀴, 가격)
+#       self.구동계 = 구동계
+  
+#   def 정보(self):
+#     super().정보()
+#     print(f"구동계 : {self.구동계}")
+
+# class 자동차(차):
+#   def __init__(self, 바퀴, 가격):
+#       super().__init__(바퀴, 가격)
+
+# bicycle = 자전차(2, 100, "시마노")
+# 아우디 = 자동차(4, 5000)
+# 아우디.정보()
+# bicycle.정보()
+
+# 288 메서드 오버라이딩
+# 다음 코드의 실행 결과를 예상해보세요.
+# 자식 호출
+# class 부모:
+#   def 호출(self):
+#     print("부모호출")
+
+# class 자식(부모):
+#   # 호출 메서드 재정의
+#   def 호출(self):
+#     print("자식호출")
+
+# 나 = 자식()
+# 나.호출()
+
+# 289 생성자
+# 다음 코드의 실행 결과를 예상해보세요.
+# 자식 생성
+# class 부모:
+#   def __init__(self):
+#     print("부모생성")
+
+# class 자식(부모):
+#   def __init__(self):
+#     print("자식생성")
+
+# 나 = 자식()
+
+# 290 부모클래스 생성자 호출
+# 다음 코드의 실행 결과를 예상해보세요.
+# 자식 생성, 부모 생성
+class 부모:
+  def __init__(self):
+    print("부모생성")
+
+class 자식(부모):
+  def __init__(self):
+    print("자식생성")
+    super().__init__()
+
+나 = 자식()
