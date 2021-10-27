@@ -2392,13 +2392,130 @@ btc 딕셔너리 안에는 시가, 종가, 최고가, 최저가 등이 저장되
 # 290 부모클래스 생성자 호출
 # 다음 코드의 실행 결과를 예상해보세요.
 # 자식 생성, 부모 생성
-class 부모:
-  def __init__(self):
-    print("부모생성")
+# class 부모:
+#   def __init__(self):
+#     print("부모생성")
 
-class 자식(부모):
-  def __init__(self):
-    print("자식생성")
-    super().__init__()
+# class 자식(부모):
+#   def __init__(self):
+#     print("자식생성")
+#     super().__init__()
 
-나 = 자식()
+# 나 = 자식()
+
+# 12. 파일 입출력과 예외처리
+#파이썬을 이용한 컴퓨터에 저장된 파일을 읽거나 반대로 파일을 쓸 수 있습니다. 프로그램을 작성하다보면 예외가 발생할 수 있는데 이를 잘 처리하는 것이 중요합니다.
+
+# 291 파일 쓰기
+# 바탕화면에 '매수종목1.txt' 파일을 생성한 후 다음과 같이 종목코드를 파일에 써보세요.
+# f = open("/Users/bjung/Desktop/매수종목1.txt", 'w')
+# # multiline 개행 막기 \
+# f.write("""\
+# 005930
+# 005380
+# 035420
+# """)
+# f.close()
+
+# 292 파일 쓰기
+# 바탕화면에 '매수종목2.txt' 파일을 생성한 후 다음과 같이 종목코드와 종목명을 파일에 써보세요.
+# f = open("/Users/bjung/Desktop/매수종목2.txt", 'wt', encoding="utf-8")
+# # multiline 개행 막기 \
+# f.write("""\
+# 005930 삼성전자
+# 005380 현대차
+# 035420 NAVER
+# """)
+# f.close()
+
+# 293 CSV 파일 쓰기
+# 바탕화면에 '매수종목.csv' 파일을 생성한 후 다음과 같이 종목코드와 종목명을 파일에 써보세요. 인코딩은 'cp949'를 사용해야합니다.
+# import csv
+# data = [["종목명", "종목코드", "PER"], ["삼성전자", "'005930", 15.79], ["NAVER", "'035420", 55.82],["NK", "'011259", 11.25]]
+
+# with as 문을 사용하면 사용후 자동으로 close
+# with open("/Users/bjung/Desktop/매수종목.csv", 'wt', encoding="cp949") as f:
+#   writer = csv.writer(f)
+
+#   for i in data:
+#     writer.writerow(i)
+
+# 294 파일 읽기
+# 바탕화면에 생성한 '매수종목1.txt' 파일을 읽은 후 종목코드를 리스트에 저장해보세요.
+# with open("/Users/bjung/Desktop/매수종목1.txt", 'r', encoding="utf-8") as f:
+#   print([i.strip() for i in f.readlines()])
+
+# f = open("/Users/bjung/Desktop/매수종목1.txt", encoding="utf-8")
+# lines = f.readlines()   # python list
+# print([i.strip() for i in lines])
+# f.close()
+
+# 295 파일 읽기
+# 바탕화면에 생성한 '매수종목2.txt' 파일을 읽은 후 종목코드와 종목명을 딕셔너리로 저장해보세요. 종목명을 key로 종목명을 value로 저장합니다.
+# with open("/Users/bjung/Desktop/매수종목2.txt", 'r', encoding="utf-8") as f:
+#   dic = {}
+#   for i in f.readlines():
+#     i = i.strip()
+#     k, v = i.split()
+#     dic[k] = v
+# print(dic)
+
+# 296 예외처리
+# 문자열 PER (Price to Earning Ratio) 값을 실수로 변환할 때 에러가 발생합니다. 예외처리를 통해 에러가 발생하는 PER은 0으로 출력하세요.
+# per = ["10.31", "", "8.00"]
+# for i in per:
+#   try:
+#     print(float(i))
+#   except ValueError:
+#     print(0)
+
+# 297 예외처리 및 리스트에 저장
+# 문자열로 표현된 PER 값을 실수로 변환한 후 이를 새로운 리스트에 저장해보세요.
+# per = ["10.31", "", "8.00"]
+# new_per = []
+# for i in per:
+#   try:
+#     v = float(i)
+#   except:
+#     v = 0
+#   new_per.append(v)
+# print(new_per)
+
+# 298 특정 예외만 처리하기
+# 어떤 값을 0으로 나누면 ZeroDivisionError 에러가 발생합니다. try ~ except로 모든 에러에 대해 예외처리하지 말고 ZeroDivisionError 에러만 예외처리해보세요.
+# try:
+#   1 / 0
+# except ZeroDivisionError:
+#   print("0으로 나누면 안되용")
+
+# 299 예외의 메시지 출력하기
+# 다음과 같은 코드 구조를 사용하면 예외 발생 시 에러 메시지를 변수로 바인딩할 수 있습니다.
+# data = [1, 2, 3]
+# for i in range(5):
+#   try:
+#     print(data[i])
+#   except IndexError as e:
+#     print(f"{i}번쨰 Index {e}")
+
+# 300 try, except, else, finally 구조 사용해보기
+# 파이썬 예외처리는 다음과 같은 구조를 가질 수 있습니다.
+"""
+try:
+    실행 코드
+except:
+    예외가 발생했을 때 수행할 코드
+else:
+    예외가 발생하지 않았을 때 수행할 코드
+finally:
+    예외 발생 여부와 상관없이 항상 수행할 코드
+"""
+per = ["10.31", "", "8.00"]
+for i, v in enumerate(per):
+  try:
+    print(float(v))
+  except:
+    print("Error")
+  else:
+    print("예외 발생 없음")
+  finally:
+    print(f"{i+1}번쨰 실행됨\n")
